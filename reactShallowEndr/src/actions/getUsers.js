@@ -7,7 +7,6 @@ export default function getUsers(){
       type: "GET",
       headers: { authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.i_Wqyr7fiugIy1rr9Gkm7VLaB_qzjQkbJzvWTVaOYMQ"}
     }).done(function(data){
-      debugger
       dispatch({type: "FETCH_USERS", payload: data})
     })
   }

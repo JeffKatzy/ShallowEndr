@@ -17,16 +17,18 @@ class App extends Component {
     this.props.getUsers()
   }
 
-  handleSubmit(){
+  handleSubmit(login_params){
+    debugger
     $.ajax({
       url: 'http://localhost:3000/users',
       type: "POST",
+      data: { user: { username: login_params.username, password: login_params.password } },
+      dataType: "json",
       headers: { authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.i_Wqyr7fiugIy1rr9Gkm7VLaB_qzjQkbJzvWTVaOYMQ"}
     })
   }
 
   render() {
-    debugger
     return (
       <div className="App">
         <div className="App-header">
