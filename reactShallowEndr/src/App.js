@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getUsers from './actions/getUsers'
+import User from './components/users'
 import './App.css';
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <input type='submit' onClick={this.handleClick} />
+          <User user={this.props.user[0]}/>
         </div>
       </div>
     );
@@ -25,7 +27,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  return { users: state }
+  return { user: state }
 }
 
 function mapDispatchToProps(dispatch){
