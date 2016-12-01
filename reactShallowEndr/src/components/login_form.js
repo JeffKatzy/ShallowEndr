@@ -6,16 +6,16 @@ export default class LoginForm extends Component{
     this.submitLoginInfo = this.submitLoginInfo.bind(this)
   }
   submitLoginInfo(event){
-
-    let username = event.target.children[1].value
+    event.preventDefault()
+    let email = event.target.children[1].value
     let password = event.target.children[4].value
-    this.props.onLoginClick({username: username, password: password})
+    this.props.onLoginClick({email: email, password: password})
   }
   render() {
 
     return (
       <form className="login-form" onSubmit={this.submitLoginInfo}>
-        <label>Username </label>
+        <label>Email </label>
         <input type="text" /><br />
         <label>Password </label>
         <input type="password" /><br />
