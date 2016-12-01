@@ -19,7 +19,7 @@ class App extends Component {
 
   handleSubmit(){
     $.ajax({
-      url: 'http://localhost:3000/users/create',
+      url: 'http://localhost:3000/users',
       type: "POST",
       headers: { authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.i_Wqyr7fiugIy1rr9Gkm7VLaB_qzjQkbJzvWTVaOYMQ"}
     })
