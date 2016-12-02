@@ -23,9 +23,9 @@ class App extends Component {
       url: 'http://localhost:3000/users/login',
       type: "POST",
       data: { user: { email: login_params.email, password: login_params.password } },
-      dataType: "json",
-      headers: { authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.i_Wqyr7fiugIy1rr9Gkm7VLaB_qzjQkbJzvWTVaOYMQ"}
+      dataType: "json"
     }).done(function(response){
+      sessionStorage.setItem('jwt', response.jwt)
       debugger
       console.log(response)
     })
