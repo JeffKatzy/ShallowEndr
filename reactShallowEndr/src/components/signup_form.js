@@ -4,12 +4,23 @@ export default class SignUpForm extends Component {
   constructor(props){
     super(props)
   }
+  submitSignUp(event){
+    event.preventDefault()
+    let arr = [].slice.call(event.target.children)
+    arr = arr.filter(function(item, index){
+      if([1,2,5,8,11,13].includes(index)){
+        return item
+      }
+    })
+    debugger
+    this.handleSignupSubmit()
+  }
   render(){
     debugger
     return(
-      <form className="sign-up-form" onSubmit={this.makeamethod}>
+      <form className="sign-up-form" onSubmit={this.submitSignUp}>
         <label>Name: </label>
-        <input type='text' placeholder='first name here' />
+        <input name='firstname' type='text' placeholder='first name here' />
         <input type='text' placeholder='last name here' /><br />
         <label>Email:</label>
         <input type='text' placeholder='email here' /><br />

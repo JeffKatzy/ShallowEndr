@@ -13,6 +13,7 @@ class App extends Component {
     super(props)
     this.handleClick = this.handleClick.bind(this)
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
+    this.handleSignupSubmit = this.handleSignupSubmit.bind(this)
   }
   handleClick(){
     this.props.getUsers()
@@ -21,13 +22,16 @@ class App extends Component {
   handleLoginSubmit(login_params){
     this.props.logUserIn(login_params)
   }
+  handleSignupSubmit(signup_params){
+    this.props.signUserUp(signup_params)
+  }
 
   render() {
 
     return (
       <div className="App">
         <div className="App-header">
-          {localStorage.jwt ? <LoginForm onLoginClick={this.handleLoginSubmit}/> : <SignUpForm />}
+          {localStorage.jwt ? <LoginForm onLoginClick={this.handleLoginSubmit}/> : <SignUpForm onSignupClick={this.handleSignupSubmit}/>}
           <input type='submit' onClick={this.handleClick} value="Don't click this" />
           <User user={this.props.user}/>
         </div>
