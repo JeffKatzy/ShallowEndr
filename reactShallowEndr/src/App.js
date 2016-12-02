@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getUsers from './actions/getUsers'
 import logUserIn from './actions/logUserIn'
+import signUserUp from './actions/signUserUp'
 import User from './components/users'
 import './App.css';
 import LoginForm from './components/login_form'
@@ -45,7 +46,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({getUsers: getUsers, logUserIn: logUserIn}, dispatch)
+  return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn, signUserUp: signUserUp }, dispatch)
 }
 
 export default connect(mapStateToProps ,mapDispatchToProps)(App);

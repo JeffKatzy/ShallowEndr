@@ -3,33 +3,37 @@ import React, { Component } from 'react'
 export default class SignUpForm extends Component {
   constructor(props){
     super(props)
+
+    this.submitSignUp = this.submitSignUp.bind(this)
   }
   submitSignUp(event){
     event.preventDefault()
-    let arr = [].slice.call(event.target.children)
-    arr = arr.filter(function(item, index){
-      if([1,2,5,8,11,13].includes(index)){
-        return item
+    let obj = {}
+    Array.from(event.target.children).forEach((element) => {
+      if (element.name) {
+        obj[element.name] = element.value
       }
     })
-    debugger
-    this.handleSignupSubmit()
+    if (obj.password === obj.confirmation) {
+      this.props.onSignupClick(obj)
+    } else {
+      alert('yo pass is fd')
+    }
   }
   render(){
-    debugger
     return(
       <form className="sign-up-form" onSubmit={this.submitSignUp}>
         <label>Name: </label>
-        <input name='firstname' type='text' placeholder='first name here' />
-        <input type='text' placeholder='last name here' /><br />
+        <input name='first_name' type='text' placeholder='first name here' />
+        <input name='last_name' type='text' placeholder='last name here' /><br />
         <label>Email:</label>
-        <input type='text' placeholder='email here' /><br />
+        <input name='email' type='text' placeholder='email here' /><br />
         <label>UserName: </label>
-        <input type='text' placeholder='username here' /><br />
+        <input name='username' type='text' placeholder='username here' /><br />
         <label>Password: </label>
-        <input type='password' />
+        <input name='password' type='password' />
         <label>Confirm Password: </label>
-        <input type='password' />
+        <input name='confirmation' type='password' />
         <input type='submit' value='submit'/>
       </form>
     )
