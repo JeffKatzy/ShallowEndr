@@ -2,40 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getUsers from './actions/getUsers'
+import logUserIn from './actions/logUserIn'
 import User from './components/users'
 import './App.css';
 import LoginForm from './components/login_form'
-import $ from 'jquery'
+import SignUpForm from './components/signup_form'
 
 class App extends Component {
   constructor(props){
     super(props)
     this.handleClick = this.handleClick.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
   }
   handleClick(){
     this.props.getUsers()
   }
 
-  handleSubmit(login_params){
-    debugger
-    $.ajax({
-      url: 'http://localhost:3000/users/login',
-      type: "POST",
-      data: { user: { email: login_params.email, password: login_params.password } },
-      dataType: "json"
-    }).done(function(response){
-      sessionStorage.setItem('jwt', response.jwt)
-      debugger
-      console.log(response)
-    })
+  handleLoginSubmit(login_params){
+    this.props.logUserIn(login_params)
   }
 
   render() {
+
     return (
       <div className="App">
         <div className="App-header">
-          <LoginForm onLoginClick={this.handleSubmit}/>
+          {localStorage.jwt ? <LoginForm onLoginClick={this.handleLoginSubmit}/> : <SignUpForm />}
           <input type='submit' onClick={this.handleClick} value="Don't click this" />
           <User user={this.props.user}/>
         </div>
@@ -49,7 +41,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({getUsers: getUsers}, dispatch)
+  return bindActionCreators({getUsers: getUsers, logUserIn: logUserIn}, dispatch)
 }
 
 export default connect(mapStateToProps ,mapDispatchToProps)(App);
