@@ -7,7 +7,7 @@ export default class SignUpForm extends Component {
     super(props)
     this.submitSignUp = this.submitSignUp.bind(this)
   }
-  
+
   submitSignUp(event){
     event.preventDefault()
     let obj = {}
@@ -23,12 +23,26 @@ export default class SignUpForm extends Component {
     }
   }
 
+  switchVisible(event) {
+    if (document.getElementById('sign-up-image')) {
+      if (document.getElementById('sign-up-wrap').style.display === '') {
+          document.getElementById('sign-up-wrap').style.display = 'block';
+      //     document.getElementById('Div2').style.display = 'none';
+      }
+      else {
+          document.getElementById('sign-up-wrap').style.display = 'none';
+      //     document.getElementById('Div2').style.display = 'block';
+      }
+    }
+  }
+
+
   render(){
     return(
       <div>
-        <img className="sign-up-image" src={require("../../public/image.gif")} />
-        <div className="sign-up-wrap">
-          <form className="sign-up-form" onSubmit={this.submitSignUp} >
+        <img id="sign-up-image" src={require("../../public/image.gif")} onClick={this.switchVisible}/>
+        <div id="sign-up-wrap">
+          <form id="sign-up-form" onSubmit={this.submitSignUp} >
             <input name='first_name' type='text' placeholder='first name' /><br />
             <input name='last_name' type='text' placeholder='last name' /><br />
             <input name='email' type='text' placeholder='email' /><br />

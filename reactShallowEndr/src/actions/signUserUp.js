@@ -8,7 +8,6 @@ export default function signUserUp(obj){
         data: { user: obj },
         dataType: 'JSON'
     }).done((response) => {
-      debugger
     })
   }
 }

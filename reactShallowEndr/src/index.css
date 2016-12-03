@@ -7,13 +7,15 @@
 /** {
   background-color: pink
 }*/
-.sign-up-image {
+#sign-up-image {
   max-width: 40px;
   float: right;
 }
 
-.sign-up-image:hover ~
-  /*transform: scale(2.0);*/
+/*.sign-up-image:hover {
+  display: none;
+}*/
+/*#sign-up-image:hover ~
   .sign-up-wrap {
     display: block;
   	margin:0;
@@ -25,26 +27,24 @@
   	max-width:200px;
   	position:relative;
   	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-  }
+  }*/
 
 
 html {
   background: url(images/new.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;*/
+  -o-background-size: cover;
   background-size: cover;
-  /*max-width: 100%;*/
+  max-width: 100%;
 }
 
-.sign-up-image {
 
-}
 
-.sign-up-wrap {
+#sign-up-wrap {
   display: none;
 }
-/*.sign-up-wrap {
+#sign-up-wrap {
 	margin:0;
 	color:white;
 	background:rgb(117,	155,	176	);
@@ -54,7 +54,7 @@ html {
 	max-width:200px;
 	position:relative;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-}*/
+}
 
 .sign-up-form{
 	/*width:100%;*/
