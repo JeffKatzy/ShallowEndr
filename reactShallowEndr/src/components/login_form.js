@@ -11,8 +11,9 @@ export default class LoginForm extends Component{
     let password = event.target.children[4].value
     this.props.onLoginClick({email: email, password: password})
   }
-
   render() {
+    debugger
+
     return (
       <div>
         <form className="login-form" onSubmit={this.submitLoginInfo} >

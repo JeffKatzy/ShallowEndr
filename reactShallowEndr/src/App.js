@@ -28,13 +28,17 @@ class App extends Component {
   }
 
   render() {
-
+    debugger
     return (
       <div className="App">
         <div className="App-header">
-          {localStorage.jwt ? <LoginForm onLoginClick={this.handleLoginSubmit}/> : <SignUpForm onSignupClick={this.handleSignupSubmit}/>}
+          {!localStorage.jwt ?
+            <LoginForm onLoginClick={this.handleLoginSubmit}>
+              <User user_id={this.props.user_id}/>
+            </LoginForm>
+           : <div />}
+          <SignUpForm onSignupClick={this.handleSignupSubmit}/>
           <input type='submit' onClick={this.handleClick} value="Don't click this" />
-          <User user={this.props.user}/>
         </div>
       </div>
     );
@@ -42,7 +46,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  return { user: state }
+  return { user_id: state.user_id, jwt: state.jwt, logged_in: state.logged_in }
 }
 
 function mapDispatchToProps(dispatch){
