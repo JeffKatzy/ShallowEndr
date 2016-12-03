@@ -10,10 +10,9 @@ export default function logUserIn(login_params){
       }).fail(function(response){
         window.alert(response)
       }).done(function(response){
-        sessionStorage.setItem('jwt', response.jwt)
-        dispatch({type: "LOGGING_IN", payload: response.jwt})
         debugger
-        console.log(response)
+        localStorage.setItem('jwt', response.jwt)
+        dispatch({type: "LOGGING_IN", payload: response})
       })
     }
 }

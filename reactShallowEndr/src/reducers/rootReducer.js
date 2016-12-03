@@ -6,8 +6,8 @@ export default function users(state=[], action){
     case 'SHOW_USERS':
       return state
     case 'LOGGING_IN':
-      return action.payload
-
+      debugger
+      return Object.assign({}, state, { user_id: action.payload.user_id, jwt: action.payload.jwt, logged_in: true })
     default:
       return state
   }

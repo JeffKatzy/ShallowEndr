@@ -12,7 +12,7 @@ export default class LoginForm extends Component{
     this.props.onLoginClick({email: email, password: password})
   }
   render() {
-
+    debugger
     return (
       <form className="login-form" onSubmit={this.submitLoginInfo}>
         <label>Email </label>
