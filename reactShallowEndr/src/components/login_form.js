@@ -13,14 +13,17 @@ export default class LoginForm extends Component{
   }
   render() {
     debugger
+
     return (
-      <form className="login-form" onSubmit={this.submitLoginInfo}>
-        <label>Email </label>
-        <input type="text" /><br />
-        <label>Password </label>
-        <input type="password" /><br />
-        <button type="submit" value="Submit">Submit </button>
-      </form>
+      <div>
+        <form className="login-form" onSubmit={this.submitLoginInfo} >
+          <label>Email </label>
+          <input type="text" /><br />
+          <label>Password </label>
+          <input type="password" /><br />
+          <button type="submit" value="Submit">Submit </button>
+        </form>
+      </div>
     )
   }
 }
