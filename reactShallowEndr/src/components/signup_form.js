@@ -30,7 +30,7 @@ export default class SignUpForm extends Component {
       //     document.getElementById('Div2').style.display = 'none';
       }
       else {
-          document.getElementById('sign-up-wrap').style.display = 'none';
+          document.getElementById('sign-up-wrap').style.display = '';
       //     document.getElementById('Div2').style.display = 'block';
       }
     }
