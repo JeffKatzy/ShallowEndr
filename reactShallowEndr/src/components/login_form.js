@@ -11,16 +11,18 @@ export default class LoginForm extends Component{
     let password = event.target.children[4].value
     this.props.onLoginClick({email: email, password: password})
   }
-  render() {
 
+  render() {
     return (
-      <form className="login-form" onSubmit={this.submitLoginInfo}>
-        <label>Email </label>
-        <input type="text" /><br />
-        <label>Password </label>
-        <input type="password" /><br />
-        <button type="submit" value="Submit">Submit </button>
-      </form>
+      <div>
+        <form className="login-form" onSubmit={this.submitLoginInfo} >
+          <label>Email </label>
+          <input type="text" /><br />
+          <label>Password </label>
+          <input type="password" /><br />
+          <button type="submit" value="Submit">Submit </button>
+        </form>
+      </div>
     )
   }
 }
