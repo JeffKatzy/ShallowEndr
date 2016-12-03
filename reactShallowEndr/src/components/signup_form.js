@@ -5,9 +5,9 @@ import $ from 'jquery'
 export default class SignUpForm extends Component {
   constructor(props){
     super(props)
-
     this.submitSignUp = this.submitSignUp.bind(this)
   }
+  
   submitSignUp(event){
     event.preventDefault()
     let obj = {}
@@ -25,17 +25,19 @@ export default class SignUpForm extends Component {
 
   render(){
     return(
-      <div className="sign-up-wrap" >
-
-        <form className="sign-up-form" onSubmit={this.submitSignUp} >
-          <input name='first_name' type='text' placeholder='first name' /><br />
-          <input name='last_name' type='text' placeholder='last name' /><br />
-          <input name='email' type='text' placeholder='email' /><br />
-          <input name='username' type='text' placeholder='username' /><br />
-          <input name='password' type='password' placeholder='password' /><br />
-          <input name='confirmation' type='password' placeholder='confirm password' /><br />
-          <input type='submit' value='submit'/>
-        </form>
+      <div>
+        <img className="sign-up-image" src={require("../../public/image.gif")} />
+        <div className="sign-up-wrap">
+          <form className="sign-up-form" onSubmit={this.submitSignUp} >
+            <input name='first_name' type='text' placeholder='first name' /><br />
+            <input name='last_name' type='text' placeholder='last name' /><br />
+            <input name='email' type='text' placeholder='email' /><br />
+            <input name='username' type='text' placeholder='username' /><br />
+            <input name='password' type='password' placeholder='password' /><br />
+            <input name='confirmation' type='password' placeholder='confirm password' /><br />
+            <input type='submit' value='submit'/>
+          </form>
+        </div>
       </div>
     )
   }
