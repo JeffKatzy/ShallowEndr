@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getUsers from './actions/getUsers'
 import logUserIn from './actions/logUserIn'
 import signUserUp from './actions/signUserUp'
 import User from './components/users'
+import Home from './components/home.js'
 import './App.css';
 import LoginForm from './components/login_form'
 import SignUpForm from './components/signup_form'
@@ -16,6 +18,11 @@ class App extends Component {
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleSignupSubmit = this.handleSignupSubmit.bind(this)
   }
+
+  componentWillMount(){
+    browserHistory.push('/')
+  }
+
   handleClick(){
     this.props.getUsers()
   }
@@ -32,12 +39,10 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          {!localStorage.jwt ?
-            <LoginForm onLoginClick={this.handleLoginSubmit}>
-              <User user_id={this.props.user_id}/>
-            </LoginForm>
-           : <div />}
           <SignUpForm onSignupClick={this.handleSignupSubmit}/>
+          {!localStorage.jwt ?
+            <LoginForm onLoginClick={this.handleLoginSubmit}/>
+           : <Home />}
           <input type='submit' onClick={this.handleClick} value="Don't click this" />
         </div>
       </div>
