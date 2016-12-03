@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn install
+  /Users/nitinrw/.nvm/versions/node/v7.2.0/bin/node /usr/local/bin/yarn install
 
 PATH: 
-  /Users/nitinrw/.rvm/gems/ruby-2.3.0/bin:/Users/nitinrw/.rvm/gems/ruby-2.3.0@global/bin:/Users/nitinrw/.rvm/rubies/ruby-2.3.0/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/nitinrw/.rvm/bin
+  /Users/nitinrw/.nvm/versions/node/v7.2.0/bin:/Users/nitinrw/.rvm/gems/ruby-2.3.0/bin:/Users/nitinrw/.rvm/gems/ruby-2.3.0@global/bin:/Users/nitinrw/.rvm/rubies/ruby-2.3.0/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/nitinrw/.rvm/bin
 
 Yarn version: 
   0.17.9
 
 Node version: 
-  6.5.0
+  7.2.0
 
 Platform: 
   darwin x64
@@ -19,9 +19,11 @@ npm manifest:
     "version": "0.1.0",
     "private": true,
     "devDependencies": {
+      "browserify": "^13.1.1",
       "react-scripts": "0.7.0"
     },
     "dependencies": {
+      "jquery": "^1.7.4",
       "jquery": "^3.1.1",
       "react": "^15.4.0",
       "react-dom": "^15.4.0",
@@ -5398,5 +5400,4 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: ENOENT: no such file or directory, open '/Users/nitinrw/Development/code/ShallowEndr/reactShallowEndr/node_modules/jquery/AUTHORS.txt'
-      at Error (native)
+  Error: EACCES: permission denied, unlink '/Users/nitinrw/Development/code/ShallowEndr/reactShallowEndr/node_modules/acorn-globals/node_modules/.bin/acorn'

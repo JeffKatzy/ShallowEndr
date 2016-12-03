@@ -25,6 +25,7 @@ export default class SignUpForm extends Component {
 
   render(){
     return(
+      // <img src="../images/blowfish.svg" />
       <div className="sign-up-wrap" >
 
         <form className="sign-up-form" onSubmit={this.submitSignUp} >
