@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import { browserHistory } from 'react-router'
 
 export default function logUserIn(login_params){
     return function(dispatch){
@@ -12,6 +13,7 @@ export default function logUserIn(login_params){
       }).done(function(response){
         debugger
         localStorage.setItem('jwt', response.jwt)
+          browserHistory.push('/home')
         dispatch({type: "LOGGING_IN", payload: response})
       })
     }

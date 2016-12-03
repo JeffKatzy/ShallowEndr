@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import App from './App';
 import User from './components/users'
+import Home from './components/home'
 import configureStore from './stores/configureStore'
 import './index.css';
 
@@ -17,7 +18,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={App}>
-        <Route path='/users/:id' component={User} />
+        <Route path='/home' component={User} />
       </Route>
     </Router>
   </Provider>,
