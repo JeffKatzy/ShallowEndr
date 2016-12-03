@@ -24,13 +24,13 @@ export default class SignUpForm extends Component {
   }
 
   switchVisible(event) {
-    if (document.getElementById('sign-up-image')) {
-      if (document.getElementById('sign-up-wrap').style.display === '') {
-          document.getElementById('sign-up-wrap').style.display = 'block';
+    if (document.getElementsByClassName('image')) {
+      if (document.getElementsByClassName('wrap')[0].style.display === '') {
+        document.getElementsByClassName('wrap')[0].style.display = 'block';
       //     document.getElementById('Div2').style.display = 'none';
       }
       else {
-          document.getElementById('sign-up-wrap').style.display = '';
+          document.getElementsByClassName('wrap')[0].style.display = '';
       //     document.getElementById('Div2').style.display = 'block';
       }
     }
@@ -40,9 +40,9 @@ export default class SignUpForm extends Component {
   render(){
     return(
       <div>
-        <img id="sign-up-image" src={require("../../public/image.gif")} onClick={this.switchVisible}/>
-        <div id="sign-up-wrap">
-          <form id="sign-up-form" onSubmit={this.submitSignUp} >
+        <img className="image" src={require("../../public/image.gif")} onClick={this.switchVisible}/>
+        <div className="wrap">
+          <form className="form" onSubmit={this.submitSignUp} >
             <input name='first_name' type='text' placeholder='first name' /><br />
             <input name='last_name' type='text' placeholder='last name' /><br />
             <input name='email' type='text' placeholder='email' /><br />
