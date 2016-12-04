@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import $ from 'jquery'
+// import $ from 'jquery'
 
 
 export default class SignUpForm extends Component {
@@ -40,7 +40,7 @@ export default class SignUpForm extends Component {
   render(){
     return(
       <div>
-        <img className="image" src={require("../../public/image.gif")} onClick={this.switchVisible}/>
+        <img className="image" alt="oops" src={require("../../public/image.gif")} onClick={this.switchVisible}/>
         <div className="wrap">
           <form className="form" onSubmit={this.submitSignUp} >
             <input name='first_name' type='text' placeholder='first name' /><br />
