@@ -1,6 +1,7 @@
 import $ from 'jquery'
 
 export default function getUsers(){
+//   obviously, change to use localStorage.getItem()
   return function(dispatch){
     $.ajax({
       url: 'http://localhost:3000/users/1',
