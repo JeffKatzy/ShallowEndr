@@ -9,15 +9,19 @@ export default class Home extends Component{
     event.preventDefault()
     this.props.searchClick(event.target.children[1].value)
   }
+  getArtistId(event){
+    createArtist(event.target.id)
+    alert(event.target.id)
+  }
 
   render(){
     let artistArray = []
+    let that = this
     if(this.props.artists){
       artistArray = this.props.artists.map(function(artist){
-        return <li><a href='search/artist/again' id={artist.id}>{artist.name}</a></li>
+        return <li onClick={that.getArtistId.bind(that)} id={artist.id}>{artist.name}</li>
       })
     }
-    debugger
     return (
       <div>
         <h1>Welcome to ShallowEndr</h1>
