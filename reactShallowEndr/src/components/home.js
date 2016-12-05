@@ -11,6 +11,13 @@ export default class Home extends Component{
   }
 
   render(){
+    let artistArray = []
+    if(this.props.artists){
+      artistArray = this.props.artists.map(function(artist){
+        return <li><a href='search/artist/again' id={artist.id}>{artist.name}</a></li>
+      })
+    }
+    debugger
     return (
       <div>
         <h1>Welcome to ShallowEndr</h1>
@@ -23,6 +30,7 @@ export default class Home extends Component{
         </form>
         <input type='submit' onClick={this.props.handleClick} value="Logout" />
         <div>
+          {this.props.artists ? <div><h4>Please further specify an artist</h4> <ul>{artistArray}</ul></div> : <p></p>}
           {this.props.results ? <Artist results={this.props.results} /> : <p>ok</p> }
         </div>
         <p>

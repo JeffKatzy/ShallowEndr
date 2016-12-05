@@ -11,7 +11,7 @@ export default class Artist extends Component{
       })
     return (
       <div>
-        <h1>The Strokes</h1>
+        <h1></h1>
           <ul>
             {songList}
           </ul>

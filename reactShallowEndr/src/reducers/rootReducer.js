@@ -10,7 +10,7 @@ export default function users(state=[], action){
       debugger
       return Object.assign({}, state, { user_id: action.payload.user_id, logged_in: action.payload.logged_in })
     case 'SEARCH_RESULTS':
-      return Object.assign({}, state, { results: action.payload })
+      return Object.assign({}, state, { artistToSpecify: action.payload })
     case 'GET_SONGS':
         return Object.assign({}, state, { results: action.payload })
     default:

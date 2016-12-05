@@ -48,7 +48,7 @@ class App extends Component {
           <SignUpForm onSignupClick={this.handleSignupSubmit}/>
           {!localStorage.jwt ?
             <LoginForm onLoginClick={this.handleLoginSubmit}/>
-           : <Home handleClick={this.handleClick} searchClick={this.handleSearchSubmit} results={this.props.results}/>}
+           : <Home handleClick={this.handleClick} searchClick={this.handleSearchSubmit} results={this.props.results} artists={this.props.artistToSpecify}/>}
         </div>
       </div>
     );
@@ -56,7 +56,11 @@ class App extends Component {
 }
 
 function mapStateToProps(state){
-  return { user_id: state.user_id, jwt: state.jwt, logged_in: state.logged_in, results: state.results }
+  return {
+    user_id: state.user_id, jwt: state.jwt,
+    logged_in: state.logged_in, results: state.results,
+    artistToSpecify: state.artistToSpecify
+  }
 }
 
 function mapDispatchToProps(dispatch){
