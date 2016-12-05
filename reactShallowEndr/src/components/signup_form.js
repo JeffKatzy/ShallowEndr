@@ -11,6 +11,7 @@ export default class SignUpForm extends Component {
   submitSignUp(event){
     event.preventDefault()
     let obj = {}
+//     JK: This is clever, but still suggest just doing a handleChage on each relevant input.
     Array.from(event.target.children).forEach((element) => {
       if (element.name) {
         obj[element.name] = element.value
@@ -24,6 +25,7 @@ export default class SignUpForm extends Component {
   }
 
   switchVisible(event) {
+    // this should depend on the state, so would be an if else block to display depending on the state.
     if (document.getElementsByClassName('image')) {
       if (document.getElementsByClassName('wrap')[0].style.display === '') {
         document.getElementsByClassName('wrap')[0].style.display = 'block';
