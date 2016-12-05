@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn install
+  /usr/local/bin/node /usr/local/bin/yarn
 
 PATH: 
   /Users/nitinrw/.rvm/gems/ruby-2.3.0/bin:/Users/nitinrw/.rvm/gems/ruby-2.3.0@global/bin:/Users/nitinrw/.rvm/rubies/ruby-2.3.0/bin:/usr/local:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/nitinrw/.rvm/bin
@@ -19,13 +19,15 @@ npm manifest:
     "version": "0.1.0",
     "private": true,
     "devDependencies": {
+      "browserify": "^13.1.1",
       "react-scripts": "0.7.0"
     },
     "dependencies": {
       "jquery": "^3.1.1",
       "react": "^15.4.0",
-      "react-dom": "^15.4.0",
-      "react-redux": "^4.4.6",
+      "react-dom": "^15.3.0",
+      "react-redux": "^4.4.5",
+      "react-router": "^2.8.1",
       "redux": "^3.6.0",
       "redux-devtools-extension": "^1.0.0",
       "redux-thunk": "^2.1.0"
@@ -5398,5 +5400,5 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: ENOENT: no such file or directory, open '/Users/nitinrw/Development/code/ShallowEndr/reactShallowEndr/node_modules/jquery/AUTHORS.txt'
+  Error: EACCES: permission denied, unlink '/Users/nitinrw/Development/code/ShallowEndr/reactShallowEndr/node_modules/acorn-globals/node_modules/.bin/acorn'
       at Error (native)

@@ -9,9 +9,13 @@ export default class Home extends Component{
     event.preventDefault()
     this.props.searchClick(event.target.children[1].value)
   }
-  getArtistId(event){
-    createArtist(event.target.id)
-    alert(event.target.id)
+  getSongsFromArtist(event){
+    // createArtist(event.target.id)
+    let display_name = event.target.textContent
+    let mb_id = event.target.id
+    debugger
+    let name = display_name.toLowerCase().split(" ").join("")
+    this.props.getSongs({name: name, display_name: display_name, mb_id: mb_id})
   }
 
   render(){
@@ -19,7 +23,7 @@ export default class Home extends Component{
     let that = this
     if(this.props.artists){
       artistArray = this.props.artists.map(function(artist){
-        return <li onClick={that.getArtistId.bind(that)} id={artist.id}>{artist.name}</li>
+        return <li onClick={that.getSongsFromArtist.bind(that)} id={artist.id}>{artist.name}</li>
       })
     }
     return (

@@ -12,6 +12,7 @@ import Home from './components/home.js'
 import './App.css';
 import LoginForm from './components/login_form'
 import SignUpForm from './components/signup_form'
+import getSongs from './actions/getSongs'
 
 class App extends Component {
   constructor(props){
@@ -48,7 +49,7 @@ class App extends Component {
           <SignUpForm onSignupClick={this.handleSignupSubmit}/>
           {!localStorage.jwt ?
             <LoginForm onLoginClick={this.handleLoginSubmit}/>
-           : <Home handleClick={this.handleClick} searchClick={this.handleSearchSubmit} results={this.props.results} artists={this.props.artistToSpecify}/>}
+           : <Home handleClick={this.handleClick} searchClick={this.handleSearchSubmit} results={this.props.results} artists={this.props.artistToSpecify} getSongs={this.props.getSongs}/>}
         </div>
       </div>
     );
@@ -64,7 +65,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn, signUserUp: signUserUp, logUserOut: logUserOut, searchArtist: searchArtist }, dispatch)
+  return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn, signUserUp: signUserUp, logUserOut: logUserOut, searchArtist: searchArtist, getSongs: getSongs }, dispatch)
 }
 
 export default connect(mapStateToProps ,mapDispatchToProps)(App);
