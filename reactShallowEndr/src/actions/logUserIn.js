@@ -13,7 +13,7 @@ export default function logUserIn(login_params){
       }).done(function(response){
         debugger
         localStorage.setItem('jwt', response.jwt)
-          browserHistory.push('/home')
+        browserHistory.push('/home')
         dispatch({type: "LOGGING_IN", payload: response})
       })
     }

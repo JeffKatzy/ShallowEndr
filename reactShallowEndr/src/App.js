@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getUsers from './actions/getUsers'
 import logUserIn from './actions/logUserIn'
+import logUserOut from './actions/logUserOut'
 import signUserUp from './actions/signUserUp'
 import User from './components/users'
 import Home from './components/home.js'
@@ -24,7 +25,7 @@ class App extends Component {
   }
 
   handleClick(){
-    this.props.getUsers()
+    this.props.logUserOut()
   }
 
   handleLoginSubmit(login_params){
@@ -42,8 +43,7 @@ class App extends Component {
           <SignUpForm onSignupClick={this.handleSignupSubmit}/>
           {!localStorage.jwt ?
             <LoginForm onLoginClick={this.handleLoginSubmit}/>
-           : <Home />}
-          <input type='submit' onClick={this.handleClick} value="Don't click this" />
+           : <Home handleClick={this.handleClick}/>}
         </div>
       </div>
     );
@@ -55,7 +55,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn, signUserUp: signUserUp }, dispatch)
+  return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn, signUserUp: signUserUp, logUserOut: logUserOut }, dispatch)
 }
 
 export default connect(mapStateToProps ,mapDispatchToProps)(App);
