@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import $ from 'jquery'
+
 import Artist from './artist'
 export default class Home extends Component{
   constructor(props){
@@ -17,7 +19,7 @@ export default class Home extends Component{
     let name = display_name.toLowerCase().split(" ").join("")
     this.props.getSongs({name: name, display_name: display_name, mb_id: mb_id})
   }
-
+  
   render(){
     let artistArray = []
     let that = this
@@ -33,8 +35,8 @@ export default class Home extends Component{
         <h4>A Johnathan Cena Sponsored Production</h4>
         <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)}>
           <label>Enter Your Search Term Here: </label>
-          <input type='text' />
-          <input type='submit' />
+          <input type='text' name="input" class="input"/>
+          <input type='submit' id="search" />
         </form>
         <input type='submit' onClick={this.props.handleClick} value="Logout" />
         <div>
