@@ -7,7 +7,7 @@ export default function getSongs(artist){
       type: "POST",
       data: { artist: artist }
     }).done(function(response){
-      debugger
+        debugger
         dispatch({type: "GET_SONGS", payload: response})
       }
     )
