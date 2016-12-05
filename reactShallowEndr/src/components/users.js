@@ -7,7 +7,6 @@ export default class User extends Component{
   }
 
   render() {
-    debugger
     // let display = ""
     // if(this.props.user.username !== undefined){
     //   display = this.props.user.username

@@ -11,7 +11,6 @@ export default function logUserIn(login_params){
       }).fail(function(response){
         window.alert(response)
       }).done(function(response){
-        debugger
         localStorage.setItem('jwt', response.jwt)
         browserHistory.push('/home')
         dispatch({type: "LOGGING_IN", payload: response})
