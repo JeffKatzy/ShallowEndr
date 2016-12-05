@@ -36,8 +36,8 @@ class App extends Component {
   handleSignupSubmit(signup_params){
     this.props.signUserUp(signup_params)
   }
-  handleSearchSubmit(){
-    this.props.searchArtist()
+  handleSearchSubmit(searchTerm){
+    this.props.searchArtist(searchTerm)
     browserHistory.push('/results')
   }
 

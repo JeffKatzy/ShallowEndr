@@ -11,6 +11,8 @@ export default function users(state=[], action){
       return Object.assign({}, state, { user_id: action.payload.user_id, logged_in: action.payload.logged_in })
     case 'SEARCH_RESULTS':
       return Object.assign({}, state, { results: action.payload })
+    case 'GET_SONGS':
+        return Object.assign({}, state, { results: action.payload })
     default:
       return state
   }

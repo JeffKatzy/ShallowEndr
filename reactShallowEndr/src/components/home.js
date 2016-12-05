@@ -7,10 +7,10 @@ export default class Home extends Component{
 
   searchForArtist(event){
     event.preventDefault()
-    this.props.searchClick()
+    this.props.searchClick(event.target.children[1].value)
   }
+
   render(){
-    debugger
     return (
       <div>
         <h1>Welcome to ShallowEndr</h1>
