@@ -13,7 +13,6 @@ export default class Home extends Component{
     // createArtist(event.target.id)
     let display_name = event.target.textContent
     let mb_id = event.target.id
-    debugger
     let name = display_name.toLowerCase().split(" ").join("")
     this.props.getSongs({name: name, display_name: display_name, mb_id: mb_id})
   }
@@ -21,10 +20,13 @@ export default class Home extends Component{
   render(){
     let artistArray = []
     let that = this
-    if(this.props.artists){
+    if(Array.isArray(this.props.artists)){
+      debugger
       artistArray = this.props.artists.map(function(artist){
         return <li onClick={that.getSongsFromArtist.bind(that)} id={artist.id}>{artist.name}</li>
       })
+    } else {
+      artistArray = [<li>artist exists in db</li>]
     }
     return (
       <div>
@@ -38,7 +40,7 @@ export default class Home extends Component{
         </form>
         <input type='submit' onClick={this.props.handleClick} value="Logout" />
         <div>
-          {this.props.artists ? <div><h4>Please further specify an artist</h4> <ul>{artistArray}</ul></div> : <p></p>}
+          {this.props.artists ? <div><h4>Please further specify an artist</h4> <ul>{artistArray}</ul></div> : <p>not ok</p>}
           {this.props.results ? <Artist results={this.props.results} /> : <p>ok</p> }
         </div>
         <p>
