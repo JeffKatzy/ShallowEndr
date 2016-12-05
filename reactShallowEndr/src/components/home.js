@@ -16,7 +16,10 @@ export default class Home extends Component{
 
   render(){
     let artistArray = []
+//     don't need to initialize this if you are mapping through artists
+//   also variable name should just be artists.
     let that = this
+    //  just use an arrow fn to avoid that = this
     if(this.props.artists){
       artistArray = this.props.artists.map(function(artist){
         return <li onClick={that.getArtistId.bind(that)} id={artist.id}>{artist.name}</li>
