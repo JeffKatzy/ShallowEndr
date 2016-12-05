@@ -7,15 +7,18 @@ export default class Home extends Component{
 
   searchForArtist(event){
     event.preventDefault()
+  // dont use target.children, instead set the state on each input change.
     this.props.searchClick(event.target.children[1].value)
   }
   getArtistId(event){
+//     should be this.props.createArtist
     createArtist(event.target.id)
     alert(event.target.id)
   }
 
   render(){
     let artistArray = []
+//     you don't need to initialize an array if you are using map.
     let that = this
     if(this.props.artists){
       artistArray = this.props.artists.map(function(artist){
