@@ -1,17 +1,30 @@
 import React, { Component } from 'react'
+import Artist from './artist'
 export default class Home extends Component{
+  constructor(props){
+    super(props)
+  }
+
+  searchForArtist(event){
+    event.preventDefault()
+    this.props.searchClick()
+  }
   render(){
+    debugger
     return (
       <div>
         <h1>Welcome to ShallowEndr</h1>
         <h2>Version 0.0.0.0.1</h2>
         <h4>A Johnathan Cena Sponsored Production</h4>
-        <form id='home-main-form'>
+        <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)}>
           <label>Enter Your Search Term Here: </label>
           <input type='text' />
           <input type='submit' />
         </form>
         <input type='submit' onClick={this.props.handleClick} value="Logout" />
+        <div>
+          {this.props.results ? <Artist results={this.props.results} /> : <p>ok</p> }
+        </div>
         <p>
            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sodales, magna ut ultrices ornare, metus ipsum rutrum purus, at posuere orci dui vitae lacus. Vivamus dapibus vehicula blandit. Suspendisse vulputate quam id neque luctus, eget varius dui tristique. Sed semper, eros sit amet cursus sagittis, tortor sapien tempus ex, consectetur varius arcu dolor sit amet dui. Cras condimentum ultricies vestibulum. Mauris felis odio, dignissim sed tempus non, hendrerit ut mauris. Ut tristique sodales turpis, a maximus risus varius in. Curabitur sit amet suscipit felis, in laoreet ipsum. Proin scelerisque suscipit ante, ut maximus libero porta sed. Phasellus porta facilisis nisl, at convallis nunc sollicitudin a. Vivamus ultricies tincidunt risus, sed volutpat velit dapibus sit amet. Aenean vel turpis felis.
 
