@@ -1,62 +1,51 @@
 
-/*#home-main-form {
-  position: absolute;
-  height: 50px;
-  width: 300px;
-  margin-left: 170px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+#search-input {
+  width: 80%;
+  font-size: 500%;
+  background: rgba(241,	246,	249, .6	);
+  border: none;
+  margin: 0 auto;
+  display: block;
 }
 
-#home-main-form.on {
-  -webkit-animation-name: in-out;
-  animation-name: in-out;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
+input[type="text"] {
+    border: none;
+    display: block;
+    color: #808589;
+  }
+/*input {
+  font-color: #808589;
 }*/
 
-
-
-.search {
-  background: none;
+/*#logo {
+  transform: scale(0.1);
   position: absolute;
+  display: block;
+  left: 0px;
   top: 0px;
-  left: 0;
-  height: 50px;
-  width: 50px;
-  padding: 0;
-  border-radius: 100%;
-  outline: 0;
-  border: 0;
-  color: inherit;
-  cursor: pointer;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
-  -webkit-transform: translate(-100%, -50%);
-  -ms-transform: translate(-100%, -50%);
-  transform: translate(-100%, -50%);
+}*/
+
+#title {
+  font-family: 'Poller One', cursive;
+}
+::-webkit-input-placeholder {
+   text-align: center;
+   color: #808589;
 }
 
-.search:before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 4px;
-  background-color: #fff;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  margin-top: 26px;
-  margin-left: 17px;
-  -webkit-transition: 0.2s ease-in-out;
-  transition: 0.2s ease-in-out;
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
 }
 
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+   color: #808589;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+   color: #808589;
+}
 
 .image {
   max-width: 40px;
