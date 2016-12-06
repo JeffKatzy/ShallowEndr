@@ -11,7 +11,6 @@ export default function users(state=[], action){
     case 'SEARCH_RESULTS':
       return Object.assign({}, state, { artistToSpecify: action.payload })
     case 'GET_SONGS':
-      debugger
       return Object.assign({}, state, { artistToSpecify: null, artist: action.payload.artist, songs: action.payload.songs })
     default:
       return state

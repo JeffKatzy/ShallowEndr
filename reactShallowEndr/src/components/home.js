@@ -22,7 +22,6 @@ export default class Home extends Component{
   render(){
     let artistArray = []
     let that = this
-    debugger
     if(Array.isArray(this.props.artists)){
       artistArray = this.props.artists.map(function(artist){
         return <li onClick={that.getSongsFromArtist.bind(that)} id={artist.id}>{artist.name}</li>
@@ -31,7 +30,6 @@ export default class Home extends Component{
       artistArray = [<p>artist exists in db</p>]
     }
     if(this.props.artist !== undefined){
-      debugger
       artistArray = <Artist name={this.props.artist.display_name} songs={this.props.songs} />
     }
     return (
@@ -41,7 +39,7 @@ export default class Home extends Component{
         <div>
           <h1 id="title">ShallowEndr</h1>
           <h2>Version 0.0.0.0.1</h2>
-          <h4>A Johnathan Cena Sponsored Production</h4>
+          <p>A <strong>John Felix Anthony Cena, Jr.</strong> Sponsored Production</p>
           <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)} autoComplete="off">
             <input type='text' placeholder="Search artists" id="search-input" autoComplete="off" />
             <input type='submit' id="search" />
