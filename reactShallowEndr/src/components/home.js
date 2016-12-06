@@ -9,7 +9,7 @@ export default class Home extends Component{
 
   searchForArtist(event){
     event.preventDefault()
-    this.props.searchClick(event.target.children[1].value)
+    this.props.searchClick(event.target.children[0].value)
   }
   getSongsFromArtist(event){
     // createArtist(event.target.id)
@@ -22,14 +22,15 @@ export default class Home extends Component{
   render(){
     let artistArray = []
     let that = this
+    debugger
     if(Array.isArray(this.props.artists)){
-      debugger
       artistArray = this.props.artists.map(function(artist){
         return <li onClick={that.getSongsFromArtist.bind(that)} id={artist.id}>{artist.name}</li>
       })
     } else {
       artistArray = [<li>artist exists in db</li>]
     }
+    debugger
     return (
       <div>
         <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>
