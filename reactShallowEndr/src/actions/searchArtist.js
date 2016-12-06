@@ -7,6 +7,7 @@ export default function searchArtist(searchTerm){
       type: "GET",
       data: { artist: { searchTerm: searchTerm } }
     }).done(function(response){
+        debugger
         dispatch({type: 'SEARCH_RESULTS', payload: response})
       }
     )

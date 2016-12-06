@@ -28,9 +28,12 @@ export default class Home extends Component{
         return <li onClick={that.getSongsFromArtist.bind(that)} id={artist.id}>{artist.name}</li>
       })
     } else {
-      artistArray = [<li>artist exists in db</li>]
+      artistArray = [<p>artist exists in db</p>]
     }
-    debugger
+    if(this.props.artist !== undefined){
+      debugger
+      artistArray = <Artist name={this.props.artist.display_name} songs={this.props.songs} />
+    }
     return (
       <div>
         <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>
@@ -45,7 +48,8 @@ export default class Home extends Component{
           </form>
 
           <div>
-            {this.props.artists ? <div><h4>Please further specify an artist</h4> <ul>{artistArray}</ul></div> : <p>not ok</p>}
+            {this.props.artist ? <div>{artistArray}</div> : <h4> nope </h4> }
+            {this.props.artists ? <div><h4>Please further specify an artist</h4> <div>{artistArray}</div></div> : <p>not ok</p>}
             {this.props.results ? <Artist results={this.props.results} /> : <p>ok</p> }
           </div>
         </div>
