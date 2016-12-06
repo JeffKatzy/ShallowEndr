@@ -32,15 +32,17 @@ export default class Home extends Component{
     }
     return (
       <div>
+        <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>
+
         <div>
           <h1 id="title">ShallowEndr</h1>
           <h2>Version 0.0.0.0.1</h2>
           <h4>A Johnathan Cena Sponsored Production</h4>
-          <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)}>
-            <input type='text' placeholder="Search artists" id="search-input"/>
+          <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)} autocomplete="off">
+            <input type='text' placeholder="Search artists" id="search-input" autocomplete="off" />
             <input type='submit' id="search" />
           </form>
-          <input type='submit' onClick={this.props.handleClick} value="Logout" />
+
           <div>
             {this.props.artists ? <div><h4>Please further specify an artist</h4> <ul>{artistArray}</ul></div> : <p>not ok</p>}
             {this.props.results ? <Artist results={this.props.results} /> : <p>ok</p> }
