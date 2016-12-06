@@ -38,8 +38,8 @@ export default class Home extends Component{
           <h1 id="title">ShallowEndr</h1>
           <h2>Version 0.0.0.0.1</h2>
           <h4>A Johnathan Cena Sponsored Production</h4>
-          <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)} autocomplete="off">
-            <input type='text' placeholder="Search artists" id="search-input" autocomplete="off" />
+          <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)} autoComplete="off">
+            <input type='text' placeholder="Search artists" id="search-input" autoComplete="off" />
             <input type='submit' id="search" />
           </form>
 
