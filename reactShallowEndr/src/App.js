@@ -1,28 +1,31 @@
+import './App.css';
+
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import $ from 'jquery'
+
 import searchArtist from './actions/searchArtist'
 import getUsers from './actions/getUsers'
 import logUserIn from './actions/logUserIn'
 import logUserOut from './actions/logUserOut'
 import signUserUp from './actions/signUserUp'
+import getSongs from './actions/getSongs'
+
 import User from './components/users'
 import Home from './components/home.js'
-import './App.css';
+import ArtistList from './components/artist_list'
+import SongList from './components/song_list'
+import SearchBar from './components/search_bar'
 import LoginForm from './components/login_form'
 import SignUpForm from './components/signup_form'
-import getSongs from './actions/getSongs'
-import $ from 'jquery'
-
 
 class App extends Component {
   constructor(props){
     super(props)
     this.handleClick = this.handleClick.bind(this)
-    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleSignupSubmit = this.handleSignupSubmit.bind(this)
-    this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
   }
 
   componentWillMount(){
@@ -33,33 +36,19 @@ class App extends Component {
     this.props.logUserOut()
   }
 
-  handleLoginSubmit(login_params){
-    this.props.logUserIn(login_params)
-  }
   handleSignupSubmit(signup_params){
     this.props.signUserUp(signup_params)
   }
-  handleSearchSubmit(searchTerm){
-    this.props.searchArtist(searchTerm)
-    browserHistory.push('/results')
-  }
+
 
   render() {
     return (
       <div>
-          <SignUpForm onSignupClick={this.handleSignupSubmit}/>
-          <LoginForm onLoginClick={this.handleLoginSubmit}/>
-          <Home
-             handleClick={this.handleClick}
-             searchClick={this.handleSearchSubmit}
-             results={this.props.results}
-             artists={this.props.artistToSpecify}
-             getSongs={this.props.getSongs}
-             songs={this.props.songs}
-             artist={this.props.artist}
-             newArtists={this.props.newArtists}
-             existingArtists={this.props.existingArtists}
-          />
+          <SignUpForm onSignupClick={this.handleSignupSubmit} />
+          <LoginForm onLoginClick={this.handleLoginSubmit} />
+          <SearchBar />
+          <ArtistList />
+          <SongList />
       </div>
     );
   }
@@ -79,3 +68,15 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps ,mapDispatchToProps)(App);
+
+{/* <Home
+   handleClick={this.handleClick}
+   searchClick={this.handleSearchSubmit}
+   results={this.props.results}
+   artists={this.props.artistToSpecify}
+   getSongs={this.props.getSongs}
+   songs={this.props.songs}
+   artist={this.props.artist}
+   newArtists={this.props.newArtists}
+   existingArtists={this.props.existingArtists}
+/> */}

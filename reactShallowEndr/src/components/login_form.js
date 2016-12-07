@@ -6,23 +6,27 @@ export default class LoginForm extends Component{
   constructor(props) {
     super(props)
     this.submitLoginInfo = this.submitLoginInfo.bind(this)
+    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
   }
+
   submitLoginInfo(event){
     event.preventDefault()
     let email = event.target.children[1].value
     let password = event.target.children[4].value
     this.props.onLoginClick({email: email, password: password})
+  }
 
+  handleLoginSubmit(login_params){
+    this.props.logUserIn(login_params)
   }
 
   switchVisible(event) {
     if (document.getElementsByClassName('image')) {
       if (document.getElementsByClassName('wrap')[1].style.display === '') {
         document.getElementsByClassName('wrap')[1].style.display = 'block';
-      //     document.getElementById('Div2').style.display = 'none';
-      }
-      else {
-          document.getElementsByClassName('wrap')[1].style.display = '';
+        //document.getElementById('Div2').style.display = 'none';
+      } else {
+        document.getElementsByClassName('wrap')[1].style.display = '';
       }
     }
   }

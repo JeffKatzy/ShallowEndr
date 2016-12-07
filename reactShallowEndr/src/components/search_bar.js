@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
-// import $ from 'jquery'
-//onSubmit={this.searchForArtist.bind(this)
-export default class SearchBar extends Component {
+import { browserHistory } from 'react-router'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+
+import getSongs from '../actions/getSongs'
+import searchArtist from '../actions/searchArtist'
+
+class SearchBar extends Component {
   constructor(props){
     super(props)
     this.searchForArtist = this.searchForArtist.bind(this)
@@ -10,8 +15,9 @@ export default class SearchBar extends Component {
 
   searchForArtist(event){
     event.preventDefault()
-    this.props.searchClick(event.target.children[0].value)
+    this.handleSearchSubmit(event.target.children[0].value)
   }
+
   getSongsFromArtist(event){
     // createArtist(event.target.id)
     let display_name = event.target.textContent
@@ -20,10 +26,16 @@ export default class SearchBar extends Component {
     this.props.getSongs({name: name, display_name: display_name, mb_id: mb_id})
   }
 
+  handleSearchSubmit(searchTerm){
+    this.props.searchArtist(searchTerm)
+    browserHistory.push('/results')
+  }
+
+
   render() {
     return (
       <div>
-        <form id='home-main-form' autoComplete="off">
+        <form id='home-main-form' autoComplete="off" onSubmit={this.searchForArtist}>
           <input type='text' placeholder="Search artists" id="search-input"  />
           <button type='submit' id="search" >
             <img src={require("../../public/searchSubmit2.png")} alt="submit" />
@@ -34,3 +46,9 @@ export default class SearchBar extends Component {
   }
 
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ searchArtist: searchArtist, getSongs: getSongs }, dispatch)
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
