@@ -1,7 +1,15 @@
 import React, { Component } from 'react'
 import $ from 'jquery'
 
-import Artist from './artist'
+import ArtistList from './artist_list'
+import SongList from './song_list'
+
+{/* <div>
+  {this.props.artist ? <div>{artistArray}</div> : <h4> nope </h4> }
+  {this.props.artists ? <div><h4>Please further specify an artist</h4> <div>{artistArray}</div></div> : <p>not ok</p>}
+  {this.props.results ? <Artist results={this.props.results} /> : <p>ok</p> }
+</div> */}
+
 export default class Home extends Component{
   constructor(props){
     super(props)
@@ -32,6 +40,7 @@ export default class Home extends Component{
     if(this.props.artist !== undefined){
       artistArray = <Artist name={this.props.artist.display_name} songs={this.props.songs} />
     }
+    debugger
     return (
       <div>
         <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>
@@ -48,9 +57,8 @@ export default class Home extends Component{
           </form>
 
           <div>
-            {this.props.artist ? <div>{artistArray}</div> : <h4> nope </h4> }
-            {this.props.artists ? <div><h4>Please further specify an artist</h4> <div>{artistArray}</div></div> : <p>not ok</p>}
-            {this.props.results ? <Artist results={this.props.results} /> : <p>ok</p> }
+            <ArtistList newArtists={this.props.newArtists} existingArtists={this.props.existingArtists} />
+            <SongList />
           </div>
         </div>
         <p> Filler Text  </p>
