@@ -18,7 +18,6 @@ class ArtistsController < ApplicationController
         @partialMatchNames = @partialMatches.map {|match| match[:display_name]}
         @artistResults = @artistResults.select {|artist| !@partialMatchNames.include?(artist[:name])}
       end
-
       render json: {new_artists: @artistResults, existing_artists: @partialMatches}
     end
   end
