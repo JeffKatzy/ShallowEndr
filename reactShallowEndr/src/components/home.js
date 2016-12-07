@@ -42,7 +42,9 @@ export default class Home extends Component{
           <p>A <strong>John Felix Anthony Cena, Jr.</strong> Sponsored Production</p>
           <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)} autoComplete="off">
             <input type='text' placeholder="Search artists" id="search-input" autoComplete="off" />
-            <input type='submit' id="search" />
+            <button type='submit' id="search" >
+              <img src={require("../../public/searchSubmit2.png")} alt="submit" />
+            </button>
           </form>
 
           <div>
