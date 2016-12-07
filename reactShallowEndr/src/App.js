@@ -48,7 +48,6 @@ class App extends Component {
           <LoginForm onLoginClick={this.handleLoginSubmit} />
           <SearchBar />
           <ArtistList />
-          <SongList />
       </div>
     );
   }

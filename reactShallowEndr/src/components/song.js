@@ -2,6 +2,6 @@ import React, { Component } from 'react'
 
 export const Song = (props) => {
   return (
-    <p>Song</p>
+    <li album_id={props.album_id} mb_id={props.mb_id}>{props.name}</li>
   )
 }
