@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import $ from 'jquery'
+import $ from 'jquery'
 
 
 export default class SignUpForm extends Component {
@@ -17,10 +17,17 @@ export default class SignUpForm extends Component {
       }
     })
     if (obj.password === obj.confirmation) {
+      debugger
+      // document.getElementsByClassName('register-image')[0].style.display = '';
       this.props.onSignupClick(obj)
+      $('#registerButton').hide()
+
     } else {
       alert('yo pass is fd')
     }
+    // debugger
+    // document.getElementsByClassName('register-image')[0].style.display = '';
+
   }
 
   switchVisible(event) {
@@ -40,9 +47,10 @@ export default class SignUpForm extends Component {
   render(){
     return(
       <div>
-        <img className="image" alt="oops" src={require("../../public/signUpImagepost.png")} onClick={this.switchVisible}/>
+        <img className="register-image"  id='registerButton' alt="oops" src={require("../../public/signUpImagepost.png")} onClick={this.switchVisible} />
         <div className="wrap">
           <form className="form" onSubmit={this.submitSignUp} >
+            <label>Register</label><br />
             <input name='first_name' type='text' placeholder='first name' /><br />
             <input name='last_name' type='text' placeholder='last name' /><br />
             <input name='email' type='text' placeholder='email' /><br />

@@ -3,6 +3,7 @@ import $ from 'jquery'
 
 import ArtistList from './artist_list'
 import SongList from './song_list'
+import SearchBar from './search_bar'
 
 {/* <div>
   {this.props.artist ? <div>{artistArray}</div> : <h4> nope </h4> }
@@ -45,24 +46,9 @@ export default class Home extends Component{
       <div>
         <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>
 
-        <div>
-          <h1 id="title">ShallowEndr</h1>
-          <img src={require("../../public/ShallowEndrNewLogo.png")} alt="logo" className="logo" />
-          <h2>Version 0.0.0.0.1</h2>
-          <p>A <strong>John Felix Anthony Cena, Jr.</strong> Sponsored Production</p>
-          <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)} autoComplete="off">
-            <input type='text' placeholder="Search artists" id="search-input" autoComplete="off" />
-            <button type='submit' id="search" >
-              <img src={require("../../public/searchSubmit2.png")} alt="submit" />
-            </button>
-          </form>
-
-          <div>
+            <SearchBar />
             <ArtistList newArtists={this.props.newArtists} existingArtists={this.props.existingArtists} />
             <SongList />
-          </div>
-        </div>
-        <p> Filler Text  </p>
       </div>
     )
   }

@@ -97,37 +97,37 @@ input[type="text"] {
    font-family: 'Open Sans', sans-serif;
 }
 
-.image {
-  max-width: 40px;
+.register-image {
+  max-width: 100px;
   float: right;
-  /*clear: both;*/
-  top: 160px;
+  /*display: none;*/
+  top: 400px;
   position: absolute;
-  right: 140px;
+  right: 450px;
 }
 
 .logo {
-  max-width: 150px;
+  max-width: 350px;
   float: right;
   margin-right: 5%;
   position: relative;
-  top: 70px;
-  right: 25px;
+  top: 200px;
+  right: 200px;
 }
 
 #login-image {
   display: block;
-  max-width: 40px;
+  max-width: 100px;
   float: right;
   clear: left;
   bottom: auto;
-  top: 160px;
-  right: 100px;
+  top: 400px;
+  right: 350px;
   position: absolute;
 }
 
 #logout-image {
-  max-width: 40px;
+  max-width: 100px;
   float: right;
 }
 
@@ -153,11 +153,14 @@ html {
 	margin:0;
 	color:white;
 	background:rgb(117,	155,	176	);
-	font:600 16px/18px 'Open Sans',sans-serif;
+	font:600 20px/22px 'Open Sans',sans-serif;
   float: right;
 	margin:auto;
-	max-width:200px;
+  top: 325px;
+	max-width:300px;
 	position:relative;
+  clear: both;
+  right: 350px;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 
