@@ -1,9 +1,9 @@
 import $ from 'jquery'
 
-export default function getArtist(displayName){
+export default function getArtist(id){
   return function(dispatch){
     $.ajax({
-      url: `http://localhost:3000/artists/${displayName}`,
+      url: `http://localhost:3000/artists/${id}`,
       type: 'GET'
     }).done(function(response){
       debugger

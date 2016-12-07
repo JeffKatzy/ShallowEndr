@@ -1,5 +1,4 @@
 export default function users(state=[], action){
-  debugger
   switch (action.type) {
     case 'FETCH_USERS':
       return state.concat(action.payload)

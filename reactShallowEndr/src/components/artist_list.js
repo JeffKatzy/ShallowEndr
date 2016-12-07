@@ -14,9 +14,7 @@ class ArtistList extends Component{
 
   getExistingArtist(event){
     event.preventDefault()
-    let srchTerm = event.target.attributes.id.value
-    debugger
-    this.props.getArtist(srchTerm)
+    this.props.getArtist(event.target.attributes.id.value)
   }
 
   createNewArtist(){

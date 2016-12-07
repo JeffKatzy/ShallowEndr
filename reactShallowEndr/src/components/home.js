@@ -9,7 +9,6 @@ export default class Home extends Component{
   }
 
   render(){
-    debugger
     let artistArray = []
     let that = this
     if(Array.isArray(this.props.artists)){
