@@ -20,6 +20,7 @@ export default class Home extends Component{
   }
 
   render(){
+    debugger
     let artistArray = []
     let that = this
     if(Array.isArray(this.props.artists)){
@@ -29,9 +30,10 @@ export default class Home extends Component{
     } else {
       artistArray = [<p>artist exists in db</p>]
     }
-    if(this.props.artist !== undefined){
+    if(this.props.artist !== null && this.props.artist !== undefined){
       artistArray = <Artist name={this.props.artist.display_name} songs={this.props.songs} />
     }
+
     return (
       <div>
         <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>

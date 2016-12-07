@@ -9,7 +9,7 @@ export default function users(state=[], action){
     case 'LOGGING_OUT':
       return Object.assign({}, state, { user_id: action.payload.user_id, logged_in: action.payload.logged_in })
     case 'SEARCH_RESULTS':
-      return Object.assign({}, state, { artistToSpecify: action.payload })
+      return Object.assign({}, state, { artistToSpecify: action.payload, artist: null, songs: null })
     case 'GET_SONGS':
       return Object.assign({}, state, { artistToSpecify: null, artist: action.payload.artist, songs: action.payload.songs })
     default:
