@@ -1,12 +1,5 @@
 
-#search-input {
-  width: 80%;
-  font-size: 500%;
-  background: rgba(241,	246,	249, .6	);
-  border: none;
-  margin: 0 auto;
-  display: block;
-}
+
 
 input[type="text"] {
     /*border: none;*/
@@ -18,26 +11,53 @@ input[type="text"] {
   input[type="submit"]:hover {
       border: 2px solid #FFC56B;
       /*color: #000;*/
-      align-items: center;
+      /*align-items: center;
       align-self: center;
-      align-content: center;
+      align-content: center;*/
+  }
+
+  body {
+    text-align: center;
+  }
+
+  #home-main-form {
+    display: block;
+    align-self: center;
+    align-content: center;
+    top: 50%;
+    /*transform: translateY(-50%);*/
+    /*overflow: hidden;*/
+    /*padding-right: .5em;*/
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  #search-input {
+    width: 70%;
+    align-self: center;
+    font-size: 500%;
+    background: rgba(241,	246,	249, .7	);
+    border: none;
+    /*margin-bottom: 30%;*/
+    z-index: 1;
+    float: left;
+    margin-left: 10%;
+    display: inline-block;
   }
 
   #search {
-    align: center;
+    display: inline-block;
+    background:transparent;
+    border: none;
+    max-width: 40px;
+    float: left;
   }
 /*input {
   font-color: #808589;
 }*/
 
-/*#logo {
-  transform: scale(0.18);
-  position: absolute;
-  bottom: -8%;
-  left: 25%;
-  /*margin-top: -100px;
-  margin-left: -100px;
-}*/
+
 
 #app-title {
   display: none;
@@ -49,9 +69,6 @@ input[type="text"] {
    margin-top: -250px;
    margin-left: -250px;
 }
-
-
-
 
 
 #title {
@@ -83,6 +100,30 @@ input[type="text"] {
 .image {
   max-width: 40px;
   float: right;
+  /*clear: both;*/
+  top: 160px;
+  position: absolute;
+  right: 140px;
+}
+
+.logo {
+  max-width: 150px;
+  float: right;
+  margin-right: 5%;
+  position: relative;
+  top: 70px;
+  right: 25px;
+}
+
+#login-image {
+  display: block;
+  max-width: 40px;
+  float: right;
+  clear: left;
+  bottom: auto;
+  top: 160px;
+  right: 100px;
+  position: absolute;
 }
 
 #logout-image {
@@ -94,11 +135,7 @@ input[type="text"] {
    background-image: url('../public/signUpImagepost.png')
 }*/
 
-#login-image {
-  display: block;
-  max-width: 40px;
-  float: right;
-}
+
 
 html {
   background: url(images/new.jpg) no-repeat center center fixed;

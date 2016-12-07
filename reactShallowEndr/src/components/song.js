@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-export default const Song = (props) => {
-  render(){
-    
-  }
+export const Song = (props) => {
+  return (
+    <p>Song</p>
+  )
 }

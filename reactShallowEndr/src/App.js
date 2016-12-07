@@ -44,13 +44,27 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <SignUpForm onSignupClick={this.handleSignupSubmit}/>
-          {!localStorage.jwt ?
-            <LoginForm onLoginClick={this.handleLoginSubmit}/>
-           : <Home handleClick={this.handleClick} searchClick={this.handleSearchSubmit}
-           results={this.props.results} artists={this.props.artistToSpecify} getSongs={this.props.getSongs} songs={this.props.songs} artist={this.props.artist}/>}
+      <div>
+        <img src={require("../public/ShallowEndrNewLogo.png")} alt="logo" className="logo" />
+
+        <div className="App">
+
+          <div className="App-header">
+            <SignUpForm onSignupClick={this.handleSignupSubmit}/>
+            {!localStorage.jwt ?
+              <LoginForm onLoginClick={this.handleLoginSubmit}/>
+             : <Home
+               handleClick={this.handleClick}
+               searchClick={this.handleSearchSubmit}
+               results={this.props.results}
+               artists={this.props.artistToSpecify}
+               getSongs={this.props.getSongs}
+               songs={this.props.songs}
+               artist={this.props.artist}
+               newArtists={this.props.newArtists}
+               existingArtists={this.props.existingArtists}
+           />}
+          </div>
         </div>
       </div>
     );
@@ -62,6 +76,7 @@ function mapStateToProps(state){
     user_id: state.user_id, jwt: state.jwt,
     logged_in: state.logged_in, songs: state.songs,
     artist: state.artist, artistToSpecify: state.artistToSpecify,
+    newArtists: state.newArtists, existingArtists: state.existingArtists
   }
 }
 
