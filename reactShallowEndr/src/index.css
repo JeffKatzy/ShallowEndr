@@ -57,14 +57,7 @@ input[type="text"] {
   font-color: #808589;
 }*/
 
-/*#logo {
-  transform: scale(0.18);
-  position: absolute;
-  bottom: -8%;
-  left: 25%;
-  /*margin-top: -100px;
-  margin-left: -100px;
-}*/
+
 
 #app-title {
   display: none;
@@ -107,6 +100,30 @@ input[type="text"] {
 .image {
   max-width: 40px;
   float: right;
+  /*clear: both;*/
+  top: 160px;
+  position: absolute;
+  right: 140px;
+}
+
+.logo {
+  max-width: 150px;
+  float: right;
+  margin-right: 5%;
+  position: relative;
+  top: 70px;
+  right: 25px;
+}
+
+#login-image {
+  display: block;
+  max-width: 40px;
+  float: right;
+  clear: left;
+  bottom: auto;
+  top: 160px;
+  right: 100px;
+  position: absolute;
 }
 
 #logout-image {
@@ -118,11 +135,7 @@ input[type="text"] {
    background-image: url('../public/signUpImagepost.png')
 }*/
 
-#login-image {
-  display: block;
-  max-width: 40px;
-  float: right;
-}
+
 
 html {
   background: url(images/new.jpg) no-repeat center center fixed;

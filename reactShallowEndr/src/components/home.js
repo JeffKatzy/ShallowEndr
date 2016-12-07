@@ -47,6 +47,7 @@ export default class Home extends Component{
 
         <div>
           <h1 id="title">ShallowEndr</h1>
+          <img src={require("../../public/ShallowEndrNewLogo.png")} alt="logo" className="logo" />
           <h2>Version 0.0.0.0.1</h2>
           <p>A <strong>John Felix Anthony Cena, Jr.</strong> Sponsored Production</p>
           <form id='home-main-form' onSubmit={this.searchForArtist.bind(this)} autoComplete="off">
