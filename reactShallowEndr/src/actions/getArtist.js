@@ -7,7 +7,7 @@ export default function getArtist(displayName){
       type: 'GET'
     }).done(function(response){
       debugger
-      return dispatch({type: "", payload: ""})
+      return dispatch({type: "GET_SONGS", payload: response})
     })
   }
 }

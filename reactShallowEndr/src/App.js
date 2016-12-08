@@ -12,11 +12,13 @@ import logUserIn from './actions/logUserIn'
 import logUserOut from './actions/logUserOut'
 import signUserUp from './actions/signUserUp'
 import getSongs from './actions/getSongs'
+import getSongsFromPlaylist from './actions/getSongsFromPlaylist'
 
 import User from './components/users'
 import Home from './components/home.js'
 import ArtistList from './components/artist_list'
 import SongList from './components/song_list'
+import FutureSongList from './components/future_song_list'
 import SearchBar from './components/search_bar'
 import LoginForm from './components/login_form'
 import SignUpForm from './components/signup_form'
@@ -24,7 +26,8 @@ import SignUpForm from './components/signup_form'
 class App extends Component {
   constructor(props){
     super(props)
-    this.handleClick = this.handleClick.bind(this)
+    this.handleLogoutClick = this.handleLogoutClick.bind(this)
+    this.handleSuggestionClick = this.handleSuggestionClick.bind(this)
     this.handleSignupSubmit = this.handleSignupSubmit.bind(this)
   }
 
@@ -32,8 +35,12 @@ class App extends Component {
     browserHistory.push('/')
   }
 
-  handleClick(){
+  handleLogoutClick(){
     this.props.logUserOut()
+  }
+  handleSuggestionClick(){
+    debugger
+    this.props.getSongsFromPlaylist(this.props.user_id)
   }
 
   handleSignupSubmit(signup_params){
@@ -42,11 +49,23 @@ class App extends Component {
 
 
   render() {
+    debugger
     return (
       <div>
-          <SignUpForm onSignupClick={this.handleSignupSubmit} />
-          <LoginForm onLoginClick={this.handleLoginSubmit} />
+        {localStorage.jwt ?
+          <div>
+            <h3>Welcome back to ShallowEndr!</h3>
+            <button onClick={this.handleLogoutClick}>Log Out</button>
+            <button onClick={this.handleSuggestionClick}>View Saved Suggestions</button>
+          </div>
+          :
+          <div>
+            <SignUpForm onSignupClick={this.handleSignupSubmit} />
+            <LoginForm />
+          </div>
+        }
           <SearchBar />
+          {this.props.savedSongs ? <FutureSongList songs={this.props.savedSongs} /> : <p>yet to click button</p>}
           <ArtistList />
       </div>
     );
@@ -58,12 +77,15 @@ function mapStateToProps(state){
     user_id: state.user_id, jwt: state.jwt,
     logged_in: state.logged_in, songs: state.songs,
     artist: state.artist, artistToSpecify: state.artistToSpecify,
-    newArtists: state.newArtists, existingArtists: state.existingArtists
+    newArtists: state.newArtists, existingArtists: state.existingArtists,
+    savedSongs: state.savedSongs
   }
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn, signUserUp: signUserUp, logUserOut: logUserOut, searchArtist: searchArtist, getSongs: getSongs }, dispatch)
+  return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn,
+    signUserUp: signUserUp, logUserOut: logUserOut, searchArtist: searchArtist,
+    getSongs: getSongs, getSongsFromPlaylist: getSongsFromPlaylist }, dispatch)
 }
 
 export default connect(mapStateToProps ,mapDispatchToProps)(App);
