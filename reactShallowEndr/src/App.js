@@ -32,6 +32,7 @@ class App extends Component {
   }
 
   componentWillMount(){
+    //check to see if a user is logged in with an action and set state accordingly
     browserHistory.push('/')
   }
 
@@ -49,7 +50,6 @@ class App extends Component {
 
 
   render() {
-    debugger
     return (
       <div>
         {localStorage.jwt ?

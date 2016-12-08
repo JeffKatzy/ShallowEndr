@@ -12,7 +12,6 @@ class FutureSong extends Component{
 
   removeSong(event){
     event.preventDefault()
-    debugger
     this.props.deleteSong(event.target.id)
   }
 
