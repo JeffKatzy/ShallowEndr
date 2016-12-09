@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import $ from 'jquery'
 
+import logUserIn from "../actions/logUserIn"
 
-export default class LoginForm extends Component{
+
+class LoginForm extends Component{
   constructor(props) {
     super(props)
     this.submitLoginInfo = this.submitLoginInfo.bind(this)
-    this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
   }
 
   submitLoginInfo(event){
     event.preventDefault()
-    let email = event.target.children[1].value
-    let password = event.target.children[4].value
-    this.props.onLoginClick({email: email, password: password})
-  }
-
-  handleLoginSubmit(login_params){
+    let login_params = {
+      email: event.target.children[2].value,
+      password: event.target.children[4].value
+    }
     this.props.logUserIn(login_params)
   }
 
@@ -48,3 +49,7 @@ export default class LoginForm extends Component{
     )
   }
 }
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({logUserIn: logUserIn}, dispatch)
+}
+export default connect(null, mapDispatchToProps)(LoginForm)

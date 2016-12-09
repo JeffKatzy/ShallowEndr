@@ -12,7 +12,7 @@ import './index.css';
 
 
 // CREATE THE STORE
-export const store = configureStore({user_id: null, jwt: null, logged_in: false})
+export const store = configureStore({user_id: null, jwt: localStorage.jwt, logged_in: false})
 
 
 ReactDOM.render(
