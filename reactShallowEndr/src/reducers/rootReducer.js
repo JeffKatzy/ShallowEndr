@@ -13,7 +13,7 @@ export default function users(state=[], action){
     case 'SEARCH_RESULTS':
       return Object.assign({}, state, { existingArtists: action.payload.existing_artists, newArtists: action.payload.new_artists })
     case 'GET_SONGS':
-      return Object.assign({}, state, { artistToSpecify: null, artist: action.payload.artist, songs: action.payload.songs })
+      return Object.assign({}, state, { artistToSpecify: null, artist: action.payload.artist, songs: action.payload.songs, existingArtists: [], newArtists: [] })
     case 'VIEW_SAVED_SONGS':
       return Object.assign({}, state, { savedSongs: action.payload })
     default:
