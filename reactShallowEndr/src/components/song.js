@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import addSong from '../actions/addSongToPlaylist'
+import castVote from '../actions/castVote'
 
 class Song extends Component{
   constructor(props){
@@ -17,7 +18,7 @@ class Song extends Component{
   }
   handleCheckBoxChange(event){
     event.preventDefault()
-    alert('changed')
+    this.props.castVote('coolio')
   }
 
   render(){
@@ -33,6 +34,6 @@ function mapStateToProps(state){
   return { current_user: state.user_id}
 }
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ addSong: addSong }, dispatch)
+  return bindActionCreators({ addSong: addSong, castVote: castVote }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Song)
