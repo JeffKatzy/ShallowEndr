@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import getArtist from '../actions/getArtist'
+import createArtist from '../actions/createArtist'
 
 import { Artist } from './artist'
 
@@ -17,8 +18,12 @@ class ArtistList extends Component{
     this.props.getArtist(event.target.attributes.id.value)
   }
 
-  createNewArtist(){
-    return ""
+  createNewArtist(event){
+    event.preventDefault()
+    let mb_id = event.target.attributes.id.value
+    let display_name = event.target.attributes.name.value
+    let name = display_name.toLowerCase().replace(' ', '')
+    this.props.createArtist({ name: name, display_name: display_name, mb_id: mb_id })
   }
 
   render() {
@@ -36,7 +41,7 @@ class ArtistList extends Component{
     if(Array.isArray(this.props.newArtists)){
       let that = this
       newArtists = this.props.newArtists.map(function(artist){
-        return <li key={artist.id}>{artist.name}</li>
+        return <li key={artist.id} name={artist.name} id={artist.id} onClick={that.createNewArtist}>{artist.name}</li>
       })
 
       existingArtists = this.props.existingArtists.map(function(artist){
@@ -65,7 +70,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({getArtist: getArtist}, dispatch)
+  return bindActionCreators({getArtist: getArtist, createArtist: createArtist}, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtistList)

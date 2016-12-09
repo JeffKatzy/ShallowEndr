@@ -6,7 +6,6 @@ export default function getArtist(id){
       url: `http://localhost:3000/artists/${id}`,
       type: 'GET'
     }).done(function(response){
-      debugger
       return dispatch({type: "GET_SONGS", payload: response})
     })
   }
