@@ -27,35 +27,32 @@ input[type="text"] {
   #home-main-form {
     display: block;
     align-self: center;
-    align-content: center;
-    top: 50%;
-    /*transform: translateY(-50%);*/
-    /*overflow: hidden;*/
-    /*padding-right: .5em;*/
     position: relative;
     margin: 0 auto;
-    overflow: hidden;
   }
 
   #search-input {
-    width: 70%;
+    width: 80%;
     align-self: center;
     font-size: 500%;
     background: rgba(241,	246,	249, .7	);
     border: none;
-    /*margin-bottom: 30%;*/
-    z-index: 1;
+    margin: 0 auto;
     float: left;
-    margin-left: 10%;
-    display: inline-block;
   }
 
-  #search {
-    display: inline-block;
+  #home-main-form #search {
     background:transparent;
     border: none;
-    max-width: 40px;
-    float: left;
+    margin: 0 auto;
+
+  }
+
+  #home-main-form {
+    margin: 0 auto;
+    /*width: 70%;*/
+    display: inline-block;
+
   }
 /*input {
   font-color: #808589;
@@ -65,7 +62,7 @@ input[type="text"] {
   background: rgba(241,	246,	249, .7	);
   width: 70%;
   /*align-self: center;*/
-  margin: 0 auto 
+  margin: 0 auto
 }
 
 /*.artist-song-list ul {
