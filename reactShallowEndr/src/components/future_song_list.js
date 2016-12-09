@@ -6,9 +6,9 @@ export default class FutureSongList extends Component{
     let song_list = this.props.songs.map(function(song){
       return <FutureSong key={song.id} id={song.id} name={song.name} />
     })
-    
+
     return (
-      <div>
+      <div className="list">
         {song_list}
       </div>
     )
