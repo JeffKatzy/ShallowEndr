@@ -7,6 +7,7 @@ import addSong from '../actions/addSongToPlaylist'
 class Song extends Component{
   constructor(props){
     super(props)
+    this.handleCheckBoxChange = this.handleCheckBoxChange.bind(this)
   }
 
   songClick(event){
@@ -14,10 +15,17 @@ class Song extends Component{
     debugger
     this.props.addSong({ song_id: event.target.id, user_id: this.props.current_user})
   }
-  
+  handleCheckBoxChange(event){
+    event.preventDefault()
+    alert('changed')
+  }
+
   render(){
     return (
-      <li id={this.props.mb_id} albumId={this.props.album_id} onClick={this.songClick.bind(this)}>{this.props.name}</li>
+      <div>
+        <li id={this.props.mb_id} albumId={this.props.album_id} onClick={this.songClick.bind(this)}>{this.props.name}</li>
+        <input type='checkbox' onChange={this.handleCheckBoxChange} />
+      </div>
     )
   }
 }
