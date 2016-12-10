@@ -112,13 +112,7 @@ input[type="text"] {
    font-family: 'Open Sans', sans-serif;
 }
 
-.register-image {
-  max-width: 70px;
-  /*float: right;*/
-  position: fixed;
-  top: 10px;
-  right: 10px;
-}
+
 
 #nav {
   max-height: 150px;
@@ -132,26 +126,27 @@ html .logo {
 }
 
 #login-image {
-  display: block;
-  max-width: 100px;
-  float: right;
+  /*display: inline-block;*/
+  max-width: 70px;
+  /*float: right;*/
   clear: left;
-  bottom: auto;
-  top: 400px;
-  right: 350px;
-  position: absolute;
+  /*bottom: auto;*/
+  top: 10px;
+  right: 85px;
+  position: fixed;
+}
+
+.register-image {
+  max-width: 70px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
 }
 
 #logout-image {
   max-width: 100px;
   float: right;
 }
-
-/*.image:hover {
-   background-image: url('../public/signUpImagepost.png')
-}*/
-
-
 
 html {
   background: url(images/new.jpg) no-repeat center center fixed;
