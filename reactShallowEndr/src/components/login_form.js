@@ -35,7 +35,6 @@ class LoginForm extends Component{
   render() {
     return (
       <div>
-        <img src={require("../../public/ShallowEndrNewLogo.png")} alt="logo" className="logo" />
         <img id="login-image" alt="oops" src={require("../../public/loginImagepost.png")} onClick={this.switchVisible}/>
         <div className="wrap">
           <form className="form" onSubmit={this.submitLoginInfo} >

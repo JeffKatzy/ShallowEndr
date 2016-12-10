@@ -118,13 +118,15 @@ input[type="text"] {
   right: 450px;
 }
 
-.logo {
-  max-width: 350px;
-  float: right;
-  margin-right: 5%;
-  position: relative;
-  top: 200px;
-  right: 200px;
+#nav {
+  max-height: 150px;
+}
+
+html .logo {
+  /*float: left;*/
+  align-self: left;
+  /*height: 20;*/
+  /*position: relative;*/
 }
 
 #login-image {
