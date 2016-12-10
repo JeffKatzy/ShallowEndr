@@ -1,10 +1,10 @@
 import './App.css';
+import $ from 'jquery'
 
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import $ from 'jquery'
 
 import searchArtist from './actions/searchArtist'
 import getUsers from './actions/getUsers'
@@ -48,13 +48,12 @@ class App extends Component {
     this.props.signUserUp(signup_params)
   }
 
-
   render() {
     return (
       <div>
         {localStorage.jwt ?
           <div>
-            <h3>Welcome back to ShallowEndr!</h3>
+            <h3 id="welcome-back">Welcome back!</h3>
             <img className="logout-image"  id='logout-image' alt="logout" src={require("../public/logoutImagepost.png")} onClick={this.handleLogoutClick} />
             <img id="saved-suggestion" alt="savedSuggestions" src={require("../public/savedSuggestions.png")} onClick={this.handleSuggestionClick} />
           </div>

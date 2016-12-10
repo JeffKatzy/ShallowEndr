@@ -169,6 +169,12 @@ html .logo {
   top: 10px;
   right: 85px;
 }
+#welcome-back {
+  position: fixed;
+  top: 10px;
+  right: 170px;
+  /*float: right;*/
+}
 
 .register-image {
   max-width: 70px;
