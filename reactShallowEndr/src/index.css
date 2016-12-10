@@ -6,6 +6,21 @@ input[type="text"] {
     text-align: center;
   }
 
+input[type="checkbox"] {
+  /*transform: scale(2.5);*/
+  zoom: 2.5;
+  float: left;
+  /*margin: 10;*/
+
+}
+
+.songs-with-checkboxes li {
+  /*float: right;*/
+  position:relative;
+  /*float: right;*/
+
+}
+
   input[type="submit"]:hover {
       border: 2px solid #FFC56B;
       /*color: #000;*/
@@ -18,7 +33,8 @@ input[type="text"] {
   }
 
   body {
-    /*text-align: center;*/
+    color: #808589;
+    font-family: 'Open Sans', sans-serif;
     align-items: center;
   }
 
@@ -45,7 +61,7 @@ input[type="text"] {
     width: 85%;
     /*align-self: center;*/
     font-size: 500%;
-    background: rgba(241,	246,	249, .7	);
+    background: rgba(241,	246,	249, .8	);
     border: none;
     /*margin: 0 auto;*/
     /*float: right;*/
@@ -61,13 +77,14 @@ input[type="text"] {
   }
 
 
-.list {
-  background: rgba(241,	246,	249, .7	);
+.artist-list {
+  background: rgba(241,	246,	249, .8	);
   width: 70%;
   position: relative;
   top: 100px;
   clear: both;
-  margin: 0 auto
+  margin: 0 auto;
+  font-size: 30px;
 }
 
 /*.artist-song-list ul {

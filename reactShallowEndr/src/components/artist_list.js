@@ -57,7 +57,7 @@ class ArtistList extends Component{
     }
 
     return (
-      <div className="list">
+      <div className="artist-list">
         {artistArray}
         <p>{newArtistsText}</p>
         <ul>
