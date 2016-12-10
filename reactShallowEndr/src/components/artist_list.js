@@ -44,8 +44,8 @@ class ArtistList extends Component{
 
     if(Array.isArray(this.props.newArtists)){
       let that = this
-      newArtistsText= "Did you mean?"
-      existingArtistsText = "Do you want to add a new artist?"
+      existingArtistsText= "Did you mean?"
+      newArtistsText = "Do you want to add a new artist?"
 
       newArtists = this.props.newArtists.map(function(artist){
         return <li key={artist.id} name={artist.name} id={artist.id} onClick={that.createNewArtist}>{artist.name}</li>
