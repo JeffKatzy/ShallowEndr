@@ -55,7 +55,7 @@ class App extends Component {
         {localStorage.jwt ?
           <div>
             <h3>Welcome back to ShallowEndr!</h3>
-            <button onClick={this.handleLogoutClick}>Log Out</button>
+            <img className="logout-image"  id='logout-image' alt="logout" src={require("../public/logoutImagepost.png")} onClick={this.handleLogoutClick} />
             <button onClick={this.handleSuggestionClick}>View Saved Suggestions</button>
           </div>
           :
