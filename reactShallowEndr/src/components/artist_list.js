@@ -31,15 +31,22 @@ class ArtistList extends Component{
     let newArtists = []
     let existingArtists = []
     let that = this
+    let newArtistsText= ""
+    let existingArtistsText = ""
 
     if(this.props.artist !== null && this.props.artist !== undefined){
       artistArray = <Artist name={this.props.artist.display_name} songs={this.props.songs} />
+      newArtistsText = ""
+      existingArtistsText = ""
     }
 
     let artist_list = <Artist />
 
     if(Array.isArray(this.props.newArtists)){
       let that = this
+      newArtistsText= "Did you mean?"
+      existingArtistsText = "Do you want to add a new artist?"
+
       newArtists = this.props.newArtists.map(function(artist){
         return <li key={artist.id} name={artist.name} id={artist.id} onClick={that.createNewArtist}>{artist.name}</li>
       })
@@ -52,11 +59,11 @@ class ArtistList extends Component{
     return (
       <div className="list">
         {artistArray}
-        <p>Did you mean?</p>
+        <p>{newArtistsText}</p>
         <ul>
           {existingArtists}
         </ul>
-        <p>Do you want to add a new artist?</p>
+        <p>{existingArtistsText}</p>
         <ul>
           {newArtists}
         </ul>
