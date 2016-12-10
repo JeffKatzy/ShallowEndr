@@ -56,7 +56,7 @@ class App extends Component {
           <div>
             <h3>Welcome back to ShallowEndr!</h3>
             <img className="logout-image"  id='logout-image' alt="logout" src={require("../public/logoutImagepost.png")} onClick={this.handleLogoutClick} />
-            <button onClick={this.handleSuggestionClick}>View Saved Suggestions</button>
+            <img id="saved-suggestion" alt="savedSuggestions" src={require("../public/savedSuggestions.png")} onClick={this.handleSuggestionClick} />
           </div>
           :
           <div>

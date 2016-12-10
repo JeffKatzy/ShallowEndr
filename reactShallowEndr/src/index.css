@@ -163,6 +163,13 @@ html .logo {
   right: 10px;
 }
 
+#saved-suggestion {
+  max-width: 70px;
+  position: fixed;
+  top: 10px;
+  right: 85px;
+}
+
 .register-image {
   max-width: 70px;
   position: fixed;
