@@ -65,9 +65,12 @@ input[type="text"] {
   background: rgba(241,	246,	249, .7	);
   width: 70%;
   /*align-self: center;*/
-  margin: 0 auto 
+  margin: 0 auto;
+  align-content: center;
 }
-
+.artistResult{
+  display: inline;
+}
 /*.artist-song-list ul {
   background: rgba(241,	246,	249, .7	);
   width: 70%;

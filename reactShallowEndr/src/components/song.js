@@ -18,20 +18,24 @@ class Song extends Component{
   }
   handleCheckBoxChange(event){
     event.preventDefault()
-    this.props.castVote('coolio')
+    //song.id = event.target.parentElement.children[1].id
+    //user.id = this.props.current_user
+    //artist.id = still needs to be sent from rails
+    debugger
+    this.props.castVote(/*{ song_id: song_id, user_id: state.current_user, artist_id: artist_id}*/)
   }
 
   render(){
     return (
       <div>
-        <li id={this.props.mb_id} albumId={this.props.album_id} onClick={this.songClick.bind(this)}>{this.props.name}</li>
-        <input type='checkbox' onChange={this.handleCheckBoxChange} />
+        <input className='artistResult' type='checkbox' onChange={this.handleCheckBoxChange} />
+        <li className='artistResult' id={this.props.mb_id} albumId={this.props.album_id} onClick={this.songClick.bind(this)}>{this.props.name}</li>
       </div>
     )
   }
 }
 function mapStateToProps(state){
-  return { current_user: state.user_id}
+  return { current_user: state.user_id }
 }
 function mapDispatchToProps(dispatch){
   return bindActionCreators({ addSong: addSong, castVote: castVote }, dispatch)
