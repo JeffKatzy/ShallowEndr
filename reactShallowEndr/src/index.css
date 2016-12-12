@@ -67,7 +67,7 @@ input[type="checkbox"] {
     /*float: right;*/
   }
 
-  #home-main-formFs #search {
+  #home-main-form #search {
     border: none;
     float: right;
     width: 120px;
@@ -88,15 +88,6 @@ input[type="checkbox"] {
     margin: 0 auto;
     font-size: 30px;
   }
-
-/*.artistResult{
-  display: inline;
-  position: relative;
-  top: 100px;
-  clear: both;
-  margin: 0 auto;
-  font-size: 30px;
-}*/
 
 .artist-song-list ul {
   background: rgba(241,	246,	249, .7	);
