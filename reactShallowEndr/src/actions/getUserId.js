@@ -6,7 +6,8 @@ export default function getUserId(){
       url: 'http://localhost:3000/users/getUserId',
       type: 'GET',
       data: { user: { jwt: localStorage.jwt } },
-      dataType: "json"
+      dataType: "json",
+      headers: { authorization: localStorage.jwt }
     }).done(function(response){
       dispatch({type: "GET_USER_ID", payload: response})
     })

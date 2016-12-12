@@ -5,7 +5,8 @@ export default function searchArtist(searchTerm){
     $.ajax({
       url: "http://localhost:3000/search",
       type: "GET",
-      data: { artist: { searchTerm: searchTerm } }
+      data: { artist: { searchTerm: searchTerm } },
+      headers: { authorization: localStorage.jwt }
     }).done(function(response){
         if(response.songs){ dispatch({type: 'GET_SONGS', payload: response}) }
         else { dispatch({type: 'SEARCH_RESULTS', payload: response}) }
