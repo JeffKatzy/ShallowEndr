@@ -7,7 +7,6 @@ export default function createArtist(artist){
       type: 'POST',
       data: {artist: { mb_id: artist.mb_id, name: artist.name, display_name: artist.display_name } }
     }).done(function(response){
-      debugger
       return dispatch({type: "GET_SONGS", payload: response})
     })
   }

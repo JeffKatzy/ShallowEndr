@@ -11,11 +11,13 @@ export default function users(state=[], action){
     case 'FAILED_LOGIN':
       return state
     case 'SEARCH_RESULTS':
-      return Object.assign({}, state, { existingArtists: action.payload.existing_artists, newArtists: action.payload.new_artists })
+      return Object.assign({}, state, { existingArtists: action.payload.existing_artists, newArtists: action.payload.new_artists, songs: null })
     case 'GET_SONGS':
-      return Object.assign({}, state, { artistToSpecify: null, artist: action.payload.artist, songs: action.payload.songs, existingArtists: [], newArtists: [] })
+      return Object.assign({}, state, { artistToSpecify: null, artist: action.payload.artist, songs: action.payload.songs, rankings: action.payload.rankings, existingArtists: [], newArtists: [] })
     case 'VIEW_SAVED_SONGS':
       return Object.assign({}, state, { savedSongs: action.payload })
+    case 'CAST_VOTE':
+      return Object.assign({}, state, { rankings: action.payload })
     default:
       return state
   }

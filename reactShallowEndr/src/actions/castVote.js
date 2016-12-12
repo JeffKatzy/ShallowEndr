@@ -1,13 +1,13 @@
 import $ from 'jquery'
 
-export default function castVote(){
+export default function castVote(ranking){
   return function(dispatch){
     $.ajax({
       url: "http://localhost:3000/rankings",
-      type: "POST"
+      type: "POST",
+      data: { ranking: ranking }
     }).done(function(response){
-      debugger
-      return dispatch({type: "", payload: ""})
+      return dispatch({type: "CAST_VOTE", payload: response})
     })
   }
 }
