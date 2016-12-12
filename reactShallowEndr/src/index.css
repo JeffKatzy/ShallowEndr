@@ -54,6 +54,10 @@ input[type="checkbox"] {
     font: 24px 'Open Sans',sans-serif;
   }
 
+  #home-main-form #search:hover {
+    transform: scale(1.2);
+  }
+
   .artist-list {
     background: rgba(241,	246, 249, .8	);
     width: 70%;
@@ -105,10 +109,14 @@ input[type="checkbox"] {
   color: white;
   clear: left;
   font: 14px 'Open Sans',sans-serif;
-  top: 10px;
-  right: 85px;
+  top: 15px;
+  right: 90px;
   position: fixed;
   border: none;
+}
+
+#login-image:hover {
+  transform: scale(1.1);
 }
 
 #logout-image {
@@ -133,7 +141,7 @@ input[type="checkbox"] {
 
 .register-image {
   position: fixed;
-  top: 10px;
+  top: 15px;
   right: 10px;
   width: 70px;
   height: 70px;
@@ -146,7 +154,9 @@ input[type="checkbox"] {
   border: none;
 }
 
-
+.register-image:hover {
+  transform: scale(1.1);
+}
 
 html {
   background: url(images/new.jpg) no-repeat center center fixed;

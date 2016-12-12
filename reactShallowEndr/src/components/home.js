@@ -32,7 +32,6 @@ export default class Home extends Component{
     debugger
     return (
       <div>
-        <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>
           <SearchBar />
           <ArtistList newArtists={this.props.newArtists} existingArtists={this.props.existingArtists} />
           <SongList />
