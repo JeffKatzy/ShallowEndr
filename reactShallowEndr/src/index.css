@@ -68,12 +68,14 @@ input[type="checkbox"] {
   }
 
   #home-main-form #search {
-    background:transparent;
     border: none;
-    /*margin: 0 auto;*/
-    /*display: inline-block;*/
     float: right;
-    /*clear: right;*/
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: rgb(86,	132,	174	);
+    color: white;
+    font: 24px 'Open Sans',sans-serif;
   }
 
 
