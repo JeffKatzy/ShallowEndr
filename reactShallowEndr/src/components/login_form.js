@@ -14,6 +14,7 @@ class LoginForm extends Component{
 
   submitLoginInfo(event){
     event.preventDefault()
+    // no don't retreive this data from the dom, but instead update the state every time there is a change in the input.
     let login_params = {
       email: event.target.children[2].value,
       password: event.target.children[4].value
@@ -22,6 +23,8 @@ class LoginForm extends Component{
   }
 
   switchVisible(event) {
+      // Oh no.  I thought we moved to react so we didn't have to do things like this.  React will re-render for us on every state
+//     change, so instead just change the state, and have react reference that state to determine the class.
     if (document.getElementsByClassName('image')) {
       if (document.getElementsByClassName('wrap')[1].style.display === '') {
         document.getElementsByClassName('wrap')[1].style.display = 'block';
