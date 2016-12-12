@@ -37,9 +37,7 @@ class SearchBar extends Component {
       <div>
         <form id='home-main-form' autoComplete="off" onSubmit={this.searchForArtist}>
           <input type='text' placeholder="Search artists" id="search-input"  />
-          <button type='submit' id="search" >
-            <img src={require("../../public/searchSubmit2.png")} alt="submit" />
-          </button>
+          <button type='submit' id="search" >Submit</button>
         </form>
       </div>
     )
