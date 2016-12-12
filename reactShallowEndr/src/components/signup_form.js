@@ -48,6 +48,7 @@ export default class SignUpForm extends Component {
     return(
       <div>
         <img className="register-image"  id='registerButton' alt="oops" src={require("../../public/signUpImagepost.png")} onClick={this.switchVisible} />
+
         <div className="wrap">
           <form className="form" onSubmit={this.submitSignUp} >
             <label>Register</label><br />

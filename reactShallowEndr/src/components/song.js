@@ -27,9 +27,9 @@ class Song extends Component{
 
   render(){
     return (
-      <div>
-        <input className='artistResult' type='checkbox' onChange={this.handleCheckBoxChange} />
-        <li className='artistResult' id={this.props.mb_id} albumId={this.props.album_id} onClick={this.songClick.bind(this)}>{this.props.name}</li>
+      <div className="songs-with-checkboxes">
+        <input type='checkbox' onChange={this.handleCheckBoxChange} />
+        <li id={this.props.mb_id} albumId={this.props.album_id} onClick={this.songClick.bind(this)}>{this.props.name}</li><br />
       </div>
     )
   }
