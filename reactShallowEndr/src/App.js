@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import searchArtist from './actions/searchArtist'
+import getUserId from './actions/getUserId'
 import getUsers from './actions/getUsers'
 import logUserIn from './actions/logUserIn'
 import logUserOut from './actions/logUserOut'
@@ -33,6 +34,7 @@ class App extends Component {
 
   componentWillMount(){
     //check to see if a user is logged in with an action and set state accordingly
+    this.props.getUserId()
     browserHistory.push('/')
   }
 
@@ -49,6 +51,7 @@ class App extends Component {
   }
 
   render() {
+    debugger
     return (
       <div>
         {localStorage.jwt ?
@@ -84,7 +87,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return bindActionCreators({ getUsers: getUsers, logUserIn: logUserIn,
     signUserUp: signUserUp, logUserOut: logUserOut, searchArtist: searchArtist,
-    getSongs: getSongs, getSongsFromPlaylist: getSongsFromPlaylist }, dispatch)
+    getSongs: getSongs, getSongsFromPlaylist: getSongsFromPlaylist, getUserId: getUserId }, dispatch)
 }
 
 export default connect(mapStateToProps ,mapDispatchToProps)(App);
