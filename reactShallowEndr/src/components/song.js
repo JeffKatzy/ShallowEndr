@@ -41,7 +41,7 @@ class Song extends Component{
     return (
       <div className="songs-with-checkboxes">
         <input type='checkbox' checked={this.props.ranked} onChange={this.handleCheckBoxChange} />
-        <li id={this.props.id} mbId={this.props.mbId} albumId={this.props.albumId} onClick={this.songClick.bind(this)}>{this.props.name}</li><br />
+        <li id={this.props.id} mbId={this.props.mbId} albumId={this.props.albumId}>{this.props.name}</li><br />
       </div>
     )
   }
