@@ -12,6 +12,7 @@ class FutureSong extends Component{
 
   removeSong(event){
     event.preventDefault()
+    // this should be a property of the existing component so you should not have to find the id from the dom.
     this.props.deleteSong(event.target.id)
   }
 
