@@ -78,7 +78,7 @@ input[type="checkbox"] {
 
 
   .artist-list {
-    background: rgba(241,	246,	249, .8	);
+    background: rgba(241,	246, 249, .8	);
     width: 70%;
     position: relative;
     top: 100px;
@@ -101,18 +101,6 @@ input[type="checkbox"] {
   width: 70%;
   align-self: center;
 }
-
-/*#app-title {
-  display: none;
-  transform: scale(0.25);
-  position: relative;
-  clear: both;
-   top: 50%;
-   left: 50%;
-   margin-top: -250px;
-   margin-left: -250px;
-}*/
-
 
 #title {
   /*font-family: 'Poller One', cursive;*/
@@ -140,17 +128,8 @@ input[type="checkbox"] {
    font-family: 'Open Sans', sans-serif;
 }
 
-
-
 #nav {
   max-height: 150px;
-}
-
-html .logo {
-  /*float: left;*/
-  /*align-self: left;*/
-  /*height: 20;*/
-  /*position: relative;*/
 }
 
 #login-image {

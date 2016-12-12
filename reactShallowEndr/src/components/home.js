@@ -16,8 +16,6 @@ export default class Home extends Component{
     super(props)
   }
 
-
-
   render(){
     let artistArray = []
     let that = this
@@ -35,10 +33,9 @@ export default class Home extends Component{
     return (
       <div>
         <img id="logout-image" alt="logout" src={require("../../public/logoutImagepost.png")} onClick={this.props.handleClick}/>
-
-            <SearchBar />
-            <ArtistList newArtists={this.props.newArtists} existingArtists={this.props.existingArtists} />
-            <SongList />
+          <SearchBar />
+          <ArtistList newArtists={this.props.newArtists} existingArtists={this.props.existingArtists} />
+          <SongList />
       </div>
     )
   }
