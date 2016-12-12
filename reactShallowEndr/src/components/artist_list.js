@@ -15,6 +15,7 @@ class ArtistList extends Component{
 
   getExistingArtist(event){
     event.preventDefault()
+//     this attribute of id should not be coming from the dom, but should be on the state or a prop of the component instance.
     this.props.getArtist(event.target.attributes.id.value)
   }
 
@@ -27,6 +28,7 @@ class ArtistList extends Component{
   }
 
   render() {
+//     having all of these empty arrays, etc declared is a smell.
     let artistArray = []
     let newArtists = []
     let existingArtists = []
@@ -34,6 +36,7 @@ class ArtistList extends Component{
     let newArtistsText= ""
     let existingArtistsText = ""
     let artistNameText = ""
+     // these artist elements should probably always be there - so from the validation on the rails side it should be fine.
     if(this.props.artist !== null && this.props.artist !== undefined){
       artistNameText = this.props.artist.display_name
       artistArray = <Artist id={this.props.artist.id} name={this.props.artist.display_name} songs={this.props.songs} rankings={this.props.rankings} />
@@ -58,6 +61,9 @@ class ArtistList extends Component{
     }
     return (
       <div className="artist-list">
+        // Here you should just render out the component.
+        // And the data should not be in this artist list component but should just 
+//       call the other components, each of which would have their respective data.
         <h3>{artistNameText}</h3>
         {artistArray}
         <p>{newArtistsText}</p>
