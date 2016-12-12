@@ -7,7 +7,8 @@ export default function logUserIn(login_params){
         url: 'http://localhost:3000/sessions/login',
         type: "POST",
         data: { auth: { email: login_params.email, password: login_params.password } },
-        dataType: "json"
+        dataType: "json",
+        headers: { authorization: localStorage.jwt }
       }).done(function(response){
         debugger
         if(response.errors){

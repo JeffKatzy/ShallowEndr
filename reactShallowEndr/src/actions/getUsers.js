@@ -5,7 +5,7 @@ export default function getUsers(){
     $.ajax({
       url: 'http://localhost:3000/users/1',
       type: "GET",
-      headers: { authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.i_Wqyr7fiugIy1rr9Gkm7VLaB_qzjQkbJzvWTVaOYMQ"}
+      headers: { authorization: localStorage.jwt }
     }).done(function(data){
       dispatch({type: "FETCH_USERS", payload: data})
     })
