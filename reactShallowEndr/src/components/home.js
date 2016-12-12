@@ -18,6 +18,7 @@ export default class Home extends Component{
 
   render(){
     let artistArray = []
+     // map means you don't have to declare an empty artistArray.
     let that = this
     if(Array.isArray(this.props.artists)){
       artistArray = this.props.artists.map(function(artist){
@@ -26,6 +27,7 @@ export default class Home extends Component{
     } else {
       artistArray = [<p>artist exists in db</p>]
     }
+    // undefined is falsy, so can just do if(this.props.artist)
     if(this.props.artist !== undefined){
       artistArray = <Artist name={this.props.artist.display_name} songs={this.props.songs} />
     }
@@ -33,6 +35,8 @@ export default class Home extends Component{
     return (
       <div>
           <SearchBar />
+//                      probably don't need to pass down newArtists and 
+//                      existingArtists as props, but instead can map state to props in the respective components.
           <ArtistList newArtists={this.props.newArtists} existingArtists={this.props.existingArtists} />
           <SongList />
       </div>
