@@ -15,8 +15,10 @@ class Song extends Component{
     event.preventDefault();
     this.props.addSong({ song_id: event.target.id, user_id: this.props.current_user})
   }
+
   handleCheckBoxChange(event){
-    event.preventDefault()
+    // event.preventDefault()
+    debugger
     let test = 'not a ranked song'
 
     if (this.props.rankings != null) {
@@ -29,6 +31,8 @@ class Song extends Component{
       test = 'there is no ranking for this artist/user'
     }
 
+    debugger
+
     //song.id = event.target.parentElement.children[1].id
     //user.id = this.props.current_user
     //artist.id = still needs to be sent from rails
@@ -40,8 +44,11 @@ class Song extends Component{
   render(){
     return (
       <div className="songs-with-checkboxes">
+        <li>
         <input type='checkbox' checked={this.props.ranked} onChange={this.handleCheckBoxChange} />
-        <li id={this.props.id} mbId={this.props.mbId} albumId={this.props.albumId}>{this.props.name}</li><br />
+        <div id={this.props.id} mbId={this.props.mbId} albumId={this.props.albumId}>{this.props.name}</div>
+      </li>
+      <br />
       </div>
     )
   }
