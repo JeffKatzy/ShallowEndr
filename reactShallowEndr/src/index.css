@@ -134,13 +134,17 @@ input[type="checkbox"] {
 
 #login-image {
   /*display: inline-block;*/
-  max-width: 70px;
-  /*float: right;*/
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgb(128,	133,	137	);
+  color: white;
   clear: left;
-  /*bottom: auto;*/
+  font: 14px 'Open Sans',sans-serif;
   top: 10px;
   right: 85px;
   position: fixed;
+  border: none;
 }
 
 #logout-image {
@@ -164,10 +168,18 @@ input[type="checkbox"] {
 }
 
 .register-image {
-  max-width: 70px;
   position: fixed;
   top: 10px;
   right: 10px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgb(86,	132,	174	);
+  color: white;
+  clear: left;
+  font: 14px 'Open Sans',sans-serif;
+  position: fixed;
+  border: none;
 }
 
 
