@@ -15,7 +15,6 @@ input[type="checkbox"] {
 }
 
 .songs-with-checkboxes li {
-  /*float: right;*/
   position:relative;
   /*float: right;*/
 
@@ -78,28 +77,30 @@ input[type="checkbox"] {
   }
 
 
-.artist-list {
-  background: rgba(241,	246,	249, .8	);
-  width: 70%;
-  /*align-self: center;*/
-  margin: 0 auto;
-  align-content: center;
-}
+  .artist-list {
+    background: rgba(241,	246,	249, .8	);
+    width: 70%;
+    position: relative;
+    top: 100px;
+    clear: both;
+    margin: 0 auto;
+    font-size: 30px;
+  }
+
 /*.artistResult{
   display: inline;
-=======
   position: relative;
   top: 100px;
   clear: both;
   margin: 0 auto;
   font-size: 30px;
->>>>>>> 27c3f4a2703643f8058b768344f3f6a304701d87
 }*/
-/*.artist-song-list ul {
+
+.artist-song-list ul {
   background: rgba(241,	246,	249, .7	);
   width: 70%;
   align-self: center;
-}*/
+}
 
 /*#app-title {
   display: none;
