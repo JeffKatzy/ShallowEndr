@@ -18,6 +18,8 @@ export default function users(state=[], action){
       return Object.assign({}, state, { savedSongs: action.payload })
     case 'CAST_VOTE':
       return Object.assign({}, state, { rankings: action.payload })
+    case 'GET_USER_ID':
+      return Object.assign({}, state, { user_id: action.payload.user_id })
     default:
       return state
   }
