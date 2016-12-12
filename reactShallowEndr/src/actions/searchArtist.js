@@ -8,6 +8,9 @@ export default function searchArtist(searchTerm){
       data: { artist: { searchTerm: searchTerm } },
       headers: { authorization: localStorage.jwt }
     }).done(function(response){
+        if(response.rankings) {alert('fav!')}
+        else {alert('no fav')}
+        debugger
         if(response.songs){ dispatch({type: 'GET_SONGS', payload: response}) }
         else { dispatch({type: 'SEARCH_RESULTS', payload: response}) }
       }

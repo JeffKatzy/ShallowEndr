@@ -8,7 +8,6 @@ export default function createArtist(artist){
       data: {artist: { mb_id: artist.mb_id, name: artist.name, display_name: artist.display_name } },
       headers: { authorization: localStorage.jwt }
     }).done(function(response){
-      debugger
       return dispatch({type: "GET_SONGS", payload: response})
     })
   }

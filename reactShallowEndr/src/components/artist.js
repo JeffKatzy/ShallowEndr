@@ -5,8 +5,7 @@ export const Artist = (props) => {
   //artist has props that include all albums and songs
   return (
     <div className='list'>
-      <h3>{props.name}</h3>
-      <ul><SongList songs={props.songs} /></ul>
+      <ul><SongList artistId={props.key} songs={props.songs} rankings={props.rankings}/></ul>
     </div>
   )
 }

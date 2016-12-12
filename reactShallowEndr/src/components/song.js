@@ -13,29 +13,41 @@ class Song extends Component{
 
   songClick(event){
     event.preventDefault();
-    debugger
     this.props.addSong({ song_id: event.target.id, user_id: this.props.current_user})
   }
   handleCheckBoxChange(event){
     event.preventDefault()
+    let test = 'not a ranked song'
+
+    if (this.props.rankings != null) {
+      //there is already a ranking for this user/artist
+      if (this.props.rankings.song_id === this.props.id) {
+        test = 'ranked song'
+      }
+    } else {
+      //no rankings for this user/artist yet
+      test = 'there is no ranking for this artist/user'
+    }
+
     //song.id = event.target.parentElement.children[1].id
     //user.id = this.props.current_user
     //artist.id = still needs to be sent from rails
-    debugger
-    this.props.castVote(/*{ song_id: song_id, user_id: state.current_user, artist_id: artist_id}*/)
+    // let current_user = this.props.current_user
+    let current_user = 1
+    this.props.castVote({ song_id: this.props.id, user_id: current_user, artist_id: this.props.artistId})
   }
 
   render(){
     return (
       <div className="songs-with-checkboxes">
-        <input type='checkbox' onChange={this.handleCheckBoxChange} />
-        <li id={this.props.mb_id} albumId={this.props.album_id} onClick={this.songClick.bind(this)}>{this.props.name}</li><br />
+        <input type='checkbox' checked={this.props.ranked} onChange={this.handleCheckBoxChange} />
+        <li id={this.props.id} mbId={this.props.mbId} albumId={this.props.albumId}>{this.props.name}</li><br />
       </div>
     )
   }
 }
 function mapStateToProps(state){
-  return { current_user: state.user_id }
+  return { current_user: state.user_id, rankings: state.rankings }
 }
 function mapDispatchToProps(dispatch){
   return bindActionCreators({ addSong: addSong, castVote: castVote }, dispatch)

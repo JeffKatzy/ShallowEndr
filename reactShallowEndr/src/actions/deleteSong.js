@@ -7,7 +7,7 @@ export default function deleteSong(song_id){
       type: 'POST',
       headers: { authorization: localStorage.jwt }
     }).done(function(response){
-      debugger
+      
       return dispatch({type: '', dispatch: response.message})
     })
   }
